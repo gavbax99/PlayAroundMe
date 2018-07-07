@@ -1,0 +1,196 @@
+/* Stylesheet for "Play Aroud Me" */
+
+.clearfix::after { 
+    content: "";
+    display:block; 
+    clear:both; 
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    background-color: grey;
+    font-family: sans-serif;
+}
+
+button {
+    padding: 0;
+    cursor: default;
+    border-width: 0px;
+    border-image: none;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+}
+
+/* Main CSS */
+
+header {
+    width: 100%;
+    height: 54px;
+    background-color: rgb(16, 16, 16);
+}
+
+#header-container {
+    height: inherit;
+    width: 500px;
+    margin: 0 auto;
+}
+
+#logo-container {
+    height: inherit;
+    width: 54px;
+    float: left;
+    background-color: lightpink;
+}
+
+#menu-container {
+    height: inherit;
+    float: right;
+    font-size: 14px;
+    line-height: 50px;
+    color: white;
+    text-align: right;
+}
+
+#main-container {
+    width: 500px;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+#set-title {
+    text-align: center;
+    font-size: 28px;
+}
+
+#top-bar {
+    height: 20px;
+    width: inherit;
+    background-color: darkgrey;
+    margin-top: 5px;
+}
+
+#set-logo-top {
+
+}
+
+#mana-container {
+    width: 330px;
+    height: 160px;
+    margin-top: 10px;
+    float: left;
+}
+
+#button-container {
+    width: 170px;
+    height: 160px;
+    margin-top: 10px;
+    float: right;
+}
+
+.step-text {
+    font-size: 18px;
+    color: rgb(16, 16, 16);
+    text-align: center;
+}
+
+#mana-tiles {
+    margin-top: 5px;
+}
+
+.mana-ph {
+    height: 29px;
+    width: 61px;
+    margin: 5px 5px 0 0;
+    background-color: lightgreen;
+    border-radius: 2px;
+    color: black;
+    text-align: center;
+    font-size: 10px;
+    line-height: 29px;
+    float: left;
+}
+
+#calc-button {
+    height: 80px;
+    font-size: 18px;
+    text-align: center;
+    line-height: 80px;
+    background-color: lightseagreen;
+    color: black;
+    border-radius: 2px;
+    margin-top: 10px;
+}
+
+#reset-button {
+    height: 46px;
+    font-size: 14px;
+    text-align: center;
+    line-height: 46px;
+    background-color: lightskyblue;
+    color: black;
+    border-radius: 2px;
+    margin-top: 5px;
+}
+
+#land-container {
+    height: 100px;
+    width: 500px;
+    background-color: darkgrey;
+    border-radius: 2px;
+    margin: 0 auto;
+    margin-top: 10px;
+    text-align: center;
+}
+
+#internal-land-container {
+    padding-top: 7px;
+}
+
+.landRenderedImg {
+    display: inline-block;
+    /* position: absolute; */
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+}
+
+#calc-card-pool {
+    width: 500px;
+    background-color: darkgrey;
+    border-radius: 2px;
+    margin: 0 auto;
+    margin-top: 10px;
+    text-align: center;
+}
+
+#bottom-bar {
+    width: 500px;
+    height: 20px;
+    background-color: darkgrey;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+#careful {
+    margin-top: 10px;
+    font-size: 28px;
+    text-align: center;
+}
+
+.cardPic { 
+    width: 147px;
+    float: left;
+    margin: 0 auto;
+}
