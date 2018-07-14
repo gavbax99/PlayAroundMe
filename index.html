@@ -11,6 +11,7 @@
     <meta name="description" content="***">
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link href="assets/css/mana.css" rel="stylesheet" type="text/css">
     <!--<link rel="shortcut icon" href="assets/images/favicon.jpg">-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="assets/javascript/mainjavascript.js"></script>
@@ -36,77 +37,35 @@
 
     </header>
 
-    <div id="main-container" class="clearfix">
 
-        <p id="set-title">Dominaria Limited</p>
+    <div id="calculator" class="clearfix">
 
-        <div id="top-bar">
+        <div id="land-container" class="clearfix"><div id="internal-land-container" class="clearfix"></div></div>
 
-            <div id="set-logo-top"></div>
+        <div id="calculatorName"><span class="calcutron">Caclutron</span><span class="setName"> - M19</span></div>
 
-        </div>
-
-        <div id="mana-container">
-
-            <p id="step-one" class="step-text">Add Open Mana:</p>
-
-            <div id="mana-tiles">
-                
-                <button class="mana-ph basic" value="p" name="plains">P</button>
-                <button class="mana-ph basic" value="i" name="island">I</button>
-                <button class="mana-ph basic" value="s" name="swamp">S</button>
-                <button class="mana-ph basic" value="m" name="mountain">M</button>
-                <button class="mana-ph basic" value="f" name="forest">F</button>
-                <button class="mana-ph cb">cb</button>
-                <button class="mana-ph">NBL</button>
-                <button class="mana-ph">NBL</button>
-                <button class="mana-ph">NBL</button>
-                <button class="mana-ph">NBL</button>
-                <button class="mana-ph">NBL</button>
-                <button class="mana-ph">NBL</button>
-                <button class="mana-ph">NBL</button>
-                <button class="mana-ph">NBL</button>
-                <button class="mana-ph">NBL</button>
-                <button class="mana-ph">MSC</button>
-                <button class="mana-ph">MSC</button>
-                <button class="mana-ph">MSC</button>
-                <button class="mana-ph">MSC</button>
-                <button class="mana-ph">MSC</button>
-
-            </div>
-
-        </div>
+        <div id="mana-tiles" class="clearfix"></div>
 
         <div id="button-container">
+            <div id="calc-button" class="submitButton">Play Around Me</div>
 
-            <p id="step-two" class="step-text">Calculate:</p>
-
-            <div id="calc-button">CALC!</div>
-            
-            <div id="reset-button">Reset</div>
-
+            <div id="reset-button" class="submitButton">Reset</div>
         </div>
 
-        
     </div>
-    
-    <div id="land-container"><div id="internal-land-container"> </div></div>
 
 
 
 
-    
     <div id="calc-container">
-
-        <div id="bottom-bar">
 
             <div id="set-logo-bottom"></div>
 
         </div>
 
-        <p id="careful">Careful! Play around these cards:</p>
+        <!-- <p id="careful">Careful! Play around these cards:</p> -->
 
-        <div id="calc-card-pool"></div>
+        <div id="calc-card-pool" class="clearfix"></div>
 
     </div>
 

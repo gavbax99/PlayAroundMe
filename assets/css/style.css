@@ -1,5 +1,9 @@
 /* Stylesheet for "Play Aroud Me" */
 
+:root {
+    --fullWidth: 550px;
+}
+
 .clearfix::after { 
     content: "";
     display:block; 
@@ -14,9 +18,33 @@ html {
     box-sizing: inherit;
 }
 
+@font-face {
+    font-family: mana;
+    src: url(../fonts/manaMAN.ttf);
+}
+
 body {
-    background-color: grey;
+    background-color: rgb(213, 213, 213);
     font-family: sans-serif;
+}
+
+.bottomLine {
+    padding: 5px 0px 0px 0px;
+    font-size: 11px;
+    padding-left: 7px;
+    font-style: italic;
+    color: grey;
+    font-weight: bold;
+
+}
+
+.buttonLabels {
+    padding-left: 10px;
+    font-size: 10px;
+    font-style: italic;
+    padding: 4px;
+    position: relative;
+    top: 8px;
 }
 
 button {
@@ -40,9 +68,34 @@ header {
     background-color: rgb(16, 16, 16);
 }
 
+#calculator {
+    width: 510px;
+    background-color: rgb(55, 55, 55);
+    border-radius: 10px;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding: 30px;
+}
+
+#calculatorName {
+    font-size: 18px;
+    margin: 0 auto;
+    margin-top: 10px;
+    width: 436px;
+}
+
+.calcutron {
+    color: orangered;
+    text-shadow: 1px 1px rgb(255, 5, 5);
+}
+
+.setName {
+    color: black;
+}
+
 #header-container {
     height: inherit;
-    width: 500px;
+    width: var(--fullWidth);
     margin: 0 auto;
 }
 
@@ -63,7 +116,7 @@ header {
 }
 
 #main-container {
-    width: 500px;
+    width: var(--fullWidth);
     margin: 0 auto;
     margin-top: 30px;
 }
@@ -85,18 +138,12 @@ header {
 }
 
 #mana-container {
-    width: 330px;
-    height: 160px;
+    width: 435px;
     margin-top: 10px;
     float: left;
 }
 
-#button-container {
-    width: 170px;
-    height: 160px;
-    margin-top: 10px;
-    float: right;
-}
+
 
 .step-text {
     font-size: 18px;
@@ -105,11 +152,47 @@ header {
 }
 
 #mana-tiles {
-    margin-top: 5px;
+    margin: 0 auto;
+    margin-top: 10px;
+    width: 436px;
+}
+
+.mana-basic-button {
+    height: 60px;
+    width: 82px;
+    margin: 5px 2.5px 0 2.5px;
+    border-radius: 2px;
+    color: black;
+    text-align: center;
+    font-size: 10px;
+    line-height: 50px;
+    float: left;
+}
+
+#redS {
+    color: red;
+}
+
+.mana-nbl-button {
+    font-size: 10px;
+    color: white;
+    text-shadow: 1px 1px 5px rgb(0, 0, 0);
+    line-height: 10px;
+    height: 38px;
+    width: 82px;
+    margin: 5px 2.5px 0 2.5px;
+    border-radius: 2px;
+    text-align: center;
+    float: left;
+    background-repeat: no-repeat;
+    background-size: 150%;
+    background-position: 50% 20%;
+    border: 3px solid black;
+    display: inline-block;
 }
 
 .mana-ph {
-    height: 29px;
+    height: 30px;
     width: 61px;
     margin: 5px 5px 0 0;
     background-color: lightgreen;
@@ -117,39 +200,99 @@ header {
     color: black;
     text-align: center;
     font-size: 10px;
-    line-height: 29px;
+    line-height: 30px;
     float: left;
 }
 
-#calc-button {
-    height: 80px;
-    font-size: 18px;
-    text-align: center;
-    line-height: 80px;
-    background-color: lightseagreen;
-    color: black;
-    border-radius: 2px;
-    margin-top: 10px;
+/* art for basic buttons */
+
+.basic {
+    font-size: 22px;
+    line-height: 15px;
 }
 
-#reset-button {
-    height: 46px;
-    font-size: 14px;
+.nonbasic {
+
+}
+
+.plains {
+    background-image: url(../images/plains.jpg);
+    background-repeat: no-repeat;
+    background-size: 150%;
+    background-position: 50% 20%;
+    border: 3px solid black;
+    color: rgb(255, 238, 169);
+    text-shadow: 0px 0px 5px rgb(0, 0, 0);
+}
+
+.island {
+    background-image: url(../images/island.jpg);
+    background-repeat: no-repeat;
+    background-size: 150%;
+    background-position: 50% 20%;
+    border: 3px solid black;
+    color: rgb(130, 222, 255);
+    text-shadow: 0px 0px 5px rgb(0, 0, 0);
+}
+
+.swamp {
+    background-image: url(../images/swamp.jpg);
+    background-repeat: no-repeat;
+    background-size: 150%;
+    background-position: 50% 20%;
+    border: 3px solid black;
+    color: rgb(255, 158, 244);
+    text-shadow: 0px 0px 5px rgb(0, 0, 0);
+}
+
+.mountain {
+    background-image: url(../images/mountain.jpg);
+    background-repeat: no-repeat;
+    background-size: 150%;
+    background-position: 50% 20%;
+    border: 3px solid black;
+    color: rgb(255, 121, 106);
+    text-shadow: 0px 0px 5px rgb(0, 0, 0);
+}
+
+.forest {
+    background-image: url(../images/forest.jpg);
+    background-repeat: no-repeat;
+    background-size: 150%;
+    background-position: 50% 20%;
+    border: 3px solid black;
+    color: rgb(137, 255, 119);
+    text-shadow: 0px 0px 5px rgb(0, 0, 0);
+}
+
+/* ---------------- */ 
+
+#button-container {
+    margin: 0 auto;
+    margin-top: 20px;
     text-align: center;
-    line-height: 46px;
+}
+
+
+.submitButton {
+    display: inline-block;
+    width: 44%;
+    padding: 18px;
+    font-size: 18px;
+    text-align: center;
     background-color: lightskyblue;
     color: black;
     border-radius: 2px;
-    margin-top: 5px;
+    margin: 0 auto;
+    margin: 0 2px;
 }
 
 #land-container {
     height: 100px;
-    width: 500px;
+    width: 440px;
     background-color: darkgrey;
-    border-radius: 2px;
+    border-radius: 5px;
     margin: 0 auto;
-    margin-top: 10px;
     text-align: center;
 }
 
@@ -159,16 +302,22 @@ header {
 
 .landRenderedImg {
     display: inline-block;
-    /* position: absolute; */
     margin-left: auto;
     margin-right: auto;
     left: 0;
     right: 0;
+    border: 1px solid black;
+}
+
+#calc-container {
+    width: 500px;
+    margin: 0 auto;
+    margin-top: 10px;
+    text-align: center;
 }
 
 #calc-card-pool {
     width: 500px;
-    background-color: darkgrey;
     border-radius: 2px;
     margin: 0 auto;
     margin-top: 10px;
@@ -190,7 +339,9 @@ header {
 }
 
 .cardPic { 
-    width: 147px;
-    float: left;
+    width: 160px;
     margin: 0 auto;
+    padding: 5px;
+    display: inline-block;
+    border-radius: 13px;
 }
