@@ -6,11 +6,11 @@ var isCalc = false; // isCalc becomes true after you hit the calculate button (i
 
 
 // Basic lands
-var p = ["W", "W", "W", "W", "W"];
-var i = ["U", "U", "U", "U", "U"];
-var s = ["B", "B", "B", "B", "B"];
-var m = ["R", "R", "R", "R", "R"];
-var f = ["G", "G", "G", "G", "G"];
+var pp = ["W", "W", "W", "W", "W"];
+var ii = ["U", "U", "U", "U", "U"];
+var ss = ["B", "B", "B", "B", "B"];
+var mm = ["R", "R", "R", "R", "R"];
+var ff = ["G", "G", "G", "G", "G"];
 
 
 // Green two drop that makes G
@@ -131,13 +131,6 @@ var cardsOneH = [
     { name: "Chromium, the Mutable", cost: ["W", "U", "B", "1", "1", "1", "1"], costH: ["W", "U", "B", "1", "1", "1", "1"], cono: "214", url: "" }
 ];
 
-var typeArray = [
-    ["plains", "p", "w"],
-    ["island", "i", "u"],
-    ["swamp", "s", "b"],
-    ["mountain", "m", "r"],
-    ["forest", "f", "g"]
-];
 
 var nonBasicTypeArray = [
     { name: "Cinder Barrens", c1: "b", c1h: "#FF9EF4", c2: "r", c2h: "#FF796A", cono: "248" },
@@ -158,6 +151,15 @@ var fiveColorArray = [
     { name: "Dragon's Hoard", c1: "w", c1h: "#FFEEA9", c2: "u", c2h: "#82DEFF", c3: "b", c3h: "#FF9EF4", c4: "r", c4h: "#FF796A", c5: "r", c5h: "#FF796A", cono: "232" },
     { name: "Draconic Disciple", c1: "w", c1h: "#FFEEA9", c2: "u", c2h: "#82DEFF", c3: "b", c3h: "#FF9EF4", c4: "r", c4h: "#FF796A", c5: "r", c5h: "#FF796A", cono: "215" },
     { name: "Gift of Paradise", c1: "w", c1h: "#FFEEA9", c2: "u", c2h: "#82DEFF", c3: "b", c3h: "#FF9EF4", c4: "r", c4h: "#FF796A", c5: "r", c5h: "#FF796A", cono: "184" },
+];
+
+
+var typeArray = [
+    ["plains", "p", "w"],
+    ["island", "i", "u"],
+    ["swamp", "s", "b"],
+    ["mountain", "m", "r"],
+    ["forest", "f", "g"]
 ];
 
 var nonLandsArray = [
@@ -215,10 +217,6 @@ $(document).ready(function () {
             };
             permutation5 = permutation5H.slice(); // Reset mana in permutationX
             cards[x].cost = cards[x].costH.slice(); // Reset cards[x].cost
-            // console.log(cards[x].cost);
-            // console.log(cards[x].costH);
-            // console.log(permutation1);
-            // console.log(permutation1H);
 
             x++; // Incrament x, our main "cards" index
         }
@@ -229,12 +227,6 @@ $(document).ready(function () {
     function checkP1() {
         for (n = 0; n < cards[x].costH.length; n++) {
 
-            // console.log(n);
-            // console.log(cards[x].cost);
-            // console.log(cards[x].costH);
-            // console.log(permutation1);
-            // console.log(permutation1H);
-
             var inc = permutation1.includes(cards[x].costH[n]); // Does permutationX include the mana in question? T/F
             var splP = permutation1.indexOf(cards[x].costH[n]); // If so, what is its index #?
             var splC = cards[x].cost.indexOf(permutation1[splP]); // And whatever is in that slot, find that value's index number inside the prototypeX array (for later splicing purposes)
@@ -244,10 +236,7 @@ $(document).ready(function () {
                 if (inc == true) { // If the mana being checked is in permutationX, meaning the player has the right resource
                     permutation1.splice(splP, 1); // Remove it from permutationX
                     cards[x].cost.splice(splC, 1); // Remove it from cards[x].cost (mana cost)
-                    // console.log(cards[x].cost);
-                    // console.log(cards[x].costH);
-                    // console.log(permutation1);
-                    // console.log(permutation1H);
+
                 } else { // Otherwise they don't have the required mana
                     return false; // permutationX has failed to pay for the cost
                 }
@@ -256,10 +245,8 @@ $(document).ready(function () {
 
         // If you've made it this far, all colored mana has been accounted for and only "1", or generic mana, remain
         if (cards[x].cost.length > permutation1.length) { // If the remaining cards[x].cost (mana cost) is greater than what the player has
-            // console.log("not enough to cover the colorless!")
             return false; // Not enough generic mana, permutationX has failed to pay for the cost
         } else {
-            // console.log("enough mana, can afford!")
             return true; // Success! Colored mana accounted for and enough left over to pay for the generic mana
         }
     }
@@ -399,6 +386,7 @@ $(document).ready(function () {
 
     function initButtons() {
         for (i = 0; i < typeArray.length; i++) {
+            
             var creButton = $("<button>");
             creButton.addClass("mana-basic-button").addClass("basic").addClass(typeArray[i][0]).addClass("clearfix");
             creButton.attr("style", "box-sizing: border-box;");
@@ -420,7 +408,7 @@ $(document).ready(function () {
 
     // Click event for basic lands
     $(".basic").on("click", function () {
-        debugger;
+       
         if (isCalc == false) {
             // Adds picture of the corresponding land to the on-screen mana pool
             var pushSRC = "assets/images/" + $(this).attr("name") + ".jpg"
@@ -433,31 +421,32 @@ $(document).ready(function () {
             // Which basic land was pressed?
             if ($(this).attr("value") == "p") {
                 // Push the coresponding color into the "lands" and "landsH" arrays
-                lands.push(p);
-                landsH.push(p);
+                lands.push(pp);
+                landsH.push(pp);
             }
 
             if ($(this).attr("value") == "i") {
-                lands.push(i);
-                landsH.push(i);
+                lands.push(ii);
+                landsH.push(ii);
             }
 
             if ($(this).attr("value") == "s") {
-                lands.push(s);
-                landsH.push(s);
+                lands.push(ss);
+                landsH.push(ss);
             }
 
             if ($(this).attr("value") == "m") {
-                lands.push(m);
-                landsH.push(m);
+                lands.push(mm);
+                landsH.push(mm);
             }
 
             if ($(this).attr("value") == "f") {
-                lands.push(f);
-                landsH.push(f);
+                lands.push(ff);
+                landsH.push(ff);
             }
 
             console.log(lands);
+            console.log(landsH);
         }
 
     });
