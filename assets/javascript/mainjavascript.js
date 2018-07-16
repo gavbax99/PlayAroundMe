@@ -1,22 +1,19 @@
-//LEFT OFF: for some fucking reason now things wont load or initialize.variables are undefined upon resolution of the page.
+// ------------------GLBAL VARIABLES--------------------------
+var x = 0;
+var isCalc = false;
+var hasDual = false;
+// ------------------GLBAL VARIABLES--------------------------
 
 
-var x = 0; // Used as the main "cards" index
-var isCalc = false; // isCalc becomes true after you hit the calculate button (it turns off the functionality until reset)
-
-
+// ------------------MANA SOURCES--------------------------
 // Basic lands
 var pp = ["W", "W", "W", "W", "W"];
 var ii = ["U", "U", "U", "U", "U"];
 var ss = ["B", "B", "B", "B", "B"];
 var mm = ["R", "R", "R", "R", "R"];
 var ff = ["G", "G", "G", "G", "G"];
-
-
-// Green two drop that makes G
+// Druid of the Cowl
 var dotc = ["G", "G", "G", "G", "G"];
-
-
 // Uncommn dual lands
 var cb = ["B", "R", "R", "R", "R"];
 var fs = ["W", "B", "B", "B", "B"];
@@ -28,44 +25,54 @@ var sb = ["U", "B", "B", "B", "B"];
 var tg = ["R", "G", "G", "G", "G"];
 var te = ["G", "W", "W", "W", "W"];
 var ws = ["G", "U", "U", "U", "U"];
-
-
 // Colorless lands
 var rtower = ["1", "1", "1", "1", "1"];
 var dtower = ["1", "1", "1", "1", "1"];
-
-
 // 5 color producers
 var rspire = ["W", "U", "B", "R", "G"];
 var mlith = ["W", "U", "B", "R", "G"];
 var dhoard = ["W", "U", "B", "R", "G"];
 var ddisciple = ["W", "U", "B", "R", "G"];
-
 // Weird producers
 var celemental = [["R", "R", "R", "R", "R"], ["R", "R", "R", "R", "R"]];
 var gift = [["W", "U", "B", "R", "G"], ["W", "U", "B", "R", "G"]];
+// Built into objects
+var nonBasicTypeArray = [ //2 color sources
+    { name: "Cinder Barrens", nn: "cb", c1: "b", c1h: "#FF9EF4", c2: "r", c2h: "#FF796A", cono: "248" },
+    { name: "Forsaken Sanctuary", nn: "fs", c1: "w", c1h: "#FFEEA9", c2: "b", c2h: "#FF9EF4", cono: "250" },
+    { name: "Foul Orchard", nn: "fo", c1: "b", c1h: "#FF9EF4", c2: "g", c2h: "#89FF77", cono: "251" },
+    { name: "Highland Lake", nn: "hl", c1: "u", c1h: "#82DEFF", c2: "r", c2h: "#FF796A", cono: "252" },
+    { name: "Meandering River", nn: "mr", c1: "w", c1h: "#FFEEA9", c2: "u", c2h: "#82DEFF", cono: "253" },
+    { name: "Stone Quarry", nn: "sq", c1: "r", c1h: "#FF796A", c2: "w", c2h: "#FFEEA9", cono: "256" },
+    { name: "Submerged Boneyard", nn: "sb", c1: "u", c1h: "#82DEFF", c2: "b", c2h: "#FF9EF4", cono: "257" },
+    { name: "Timber Gorge", nn: "tg", c1: "r", c1h: "#FF796A", c2: "g", c2h: "#89FF77", cono: "258" },
+    { name: "Tranquil Expanse", nn: "te", c1: "g", c1h: "#89FF77", c2: "w", c2h: "#FFEEA9", cono: "259" },
+    { name: "Woodland Stream", nn: "ws", c1: "g", c1h: "#89FF77", c2: "u", c2h: "#82DEFF", cono: "260" }
+];
+var fiveColorArray = [ //5 color sources
+    { name: "Rupture Spire", nn: "rspire", c1: "w", c1h: "#FFEEA9", c2: "u", c2h: "#82DEFF", c3: "b", c3h: "#FF9EF4", c4: "r", c4h: "#FF796A", c5: "r", c5h: "#FF796A", cono: "255" },
+    { name: "Manalith", nn: "mlith", c1: "w", c1h: "#FFEEA9", c2: "u", c2h: "#82DEFF", c3: "b", c3h: "#FF9EF4", c4: "r", c4h: "#FF796A", c5: "r", c5h: "#FF796A", cono: "239" },
+    { name: "Dragon's Hoard", nn: "dhoard", c1: "w", c1h: "#FFEEA9", c2: "u", c2h: "#82DEFF", c3: "b", c3h: "#FF9EF4", c4: "r", c4h: "#FF796A", c5: "r", c5h: "#FF796A", cono: "232" },
+    { name: "Draconic Disciple", nn: "ddisciple", c1: "w", c1h: "#FFEEA9", c2: "u", c2h: "#82DEFF", c3: "b", c3h: "#FF9EF4", c4: "r", c4h: "#FF796A", c5: "r", c5h: "#FF796A", cono: "215" },
+    { name: "Gift of Paradise", nn: "gift", c1: "w", c1h: "#FFEEA9", c2: "u", c2h: "#82DEFF", c3: "b", c3h: "#FF9EF4", c4: "r", c4h: "#FF796A", c5: "r", c5h: "#FF796A", cono: "184" },
+];
+var typeArray = [ //Basic sources
+    ["plains", "p", "w"],
+    ["island", "i", "u"],
+    ["swamp", "s", "b"],
+    ["mountain", "m", "r"],
+    ["forest", "f", "g"]
+];
+var nonLandsArray = [ //Non-MULTi sources
+    { name: "Reliquary Tower", nn: "rtower", cono: "254" },
+    { name: "Detection Tower", nn: "dtower", cono: "249" },
+    { name: "Druid of the Cowl", nn: "dotc", cono: "177" },
+    { name: "Cataclyst Elemental", nn: "celemental", cono: "132" }
+];
+// ------------------MANA SOURCES--------------------------
 
 
-// 'lands' is used to check, 'landsH' stores initial values for reload
-var lands = [];
-var landsH = [];
-
-
-// 'permutationX' is used to check, 'permutationXH' stores initial values for reload - these are the 5 possible mana combinations the player could have
-var permutation1 = [];
-var permutation2 = [];
-var permutation3 = [];
-var permutation4 = [];
-var permutation5 = [];
-var permutation1H = [];
-var permutation2H = [];
-var permutation3H = [];
-var permutation4H = [];
-var permutation5H = [];
-//needs 10 perms for multiple duals- when a player has 2 WUBRG lands, there's 10 permutations of pairs. currently outputs [W,U,B,R,G]x2
-
-
-// Array list of cards - 'cards.cost' is used to check, 'cards.costH' stores initial values for reload/reference
+// ------------------CARD LIST--------------------------
 var cards = [
     { name: "Aegis of the Heavens", cost: ["W", "1"], costH: ["W", "1"], cono: "1", url: "" },
     { name: "Inspired Charge", cost: ["W", "W", "1", "1"], costH: ["W", "W", "1", "1"], cono: "15", url: "" },
@@ -98,7 +105,7 @@ var cards = [
     { name: "Root Snare", cost: ["G", "1"], costH: ["G", "1"], cono: "199", url: "" },
     { name: "Chromium, the Mutable", cost: ["W", "U", "B", "1", "1", "1", "1"], costH: ["W", "U", "B", "1", "1", "1", "1"], cono: "214", url: "" }
 ];
-var cardsOneH = [
+var cardsOneH = [ // Duplicate used for reload
     { name: "Aegis of the Heavens", cost: ["W", "1"], costH: ["W", "1"], cono: "1", url: "" },
     { name: "Inspired Charge", cost: ["W", "W", "1", "1"], costH: ["W", "W", "1", "1"], cono: "15", url: "" },
     { name: "Invoke the Divine", cost: ["W", "1", "1"], costH: ["W", "1", "1"], cono: "16", url: "" },
@@ -130,62 +137,98 @@ var cardsOneH = [
     { name: "Root Snare", cost: ["G", "1"], costH: ["G", "1"], cono: "199", url: "" },
     { name: "Chromium, the Mutable", cost: ["W", "U", "B", "1", "1", "1", "1"], costH: ["W", "U", "B", "1", "1", "1", "1"], cono: "214", url: "" }
 ];
+// ------------------CARD LIST--------------------------
 
 
-var nonBasicTypeArray = [
-    { name: "Cinder Barrens", c1: "b", c1h: "#FF9EF4", c2: "r", c2h: "#FF796A", cono: "248" },
-    { name: "Forsaken Sanctuary", c1: "w", c1h: "#FFEEA9", c2: "b", c2h: "#FF9EF4", cono: "250" },
-    { name: "Foul Orchard", c1: "b", c1h: "#FF9EF4", c2: "g", c2h: "#89FF77", cono: "251" },
-    { name: "Highland Lake", c1: "u", c1h: "#82DEFF", c2: "r", c2h: "#FF796A", cono: "252" },
-    { name: "Meandering River", c1: "w", c1h: "#FFEEA9", c2: "u", c2h: "#82DEFF", cono: "253" },
-    { name: "Stone Quarry", c1: "r", c1h: "#FF796A", c2: "w", c2h: "#FFEEA9", cono: "256" },
-    { name: "Submerged Boneyard", c1: "u", c1h: "#82DEFF", c2: "b", c2h: "#FF9EF4", cono: "257" },
-    { name: "Timber Gorge", c1: "r", c1h: "#FF796A", c2: "g", c2h: "#89FF77", cono: "258" },
-    { name: "Tranquil Expanse", c1: "g", c1h: "#89FF77", c2: "w", c2h: "#FFEEA9", cono: "259" },
-    { name: "Woodland Stream", c1: "g", c1h: "#89FF77", c2: "u", c2h: "#82DEFF", cono: "260" }
-];
-
-var fiveColorArray = [
-    { name: "Rupture Spire", c1: "w", c1h: "#FFEEA9", c2: "u", c2h: "#82DEFF", c3: "b", c3h: "#FF9EF4", c4: "r", c4h: "#FF796A", c5: "r", c5h: "#FF796A", cono: "255" },
-    { name: "Manalith", c1: "w", c1h: "#FFEEA9", c2: "u", c2h: "#82DEFF", c3: "b", c3h: "#FF9EF4", c4: "r", c4h: "#FF796A", c5: "r", c5h: "#FF796A", cono: "239" },
-    { name: "Dragon's Hoard", c1: "w", c1h: "#FFEEA9", c2: "u", c2h: "#82DEFF", c3: "b", c3h: "#FF9EF4", c4: "r", c4h: "#FF796A", c5: "r", c5h: "#FF796A", cono: "232" },
-    { name: "Draconic Disciple", c1: "w", c1h: "#FFEEA9", c2: "u", c2h: "#82DEFF", c3: "b", c3h: "#FF9EF4", c4: "r", c4h: "#FF796A", c5: "r", c5h: "#FF796A", cono: "215" },
-    { name: "Gift of Paradise", c1: "w", c1h: "#FFEEA9", c2: "u", c2h: "#82DEFF", c3: "b", c3h: "#FF9EF4", c4: "r", c4h: "#FF796A", c5: "r", c5h: "#FF796A", cono: "184" },
-];
+// ------------------BUCKETS FOR MANA POOL--------------------------
+var permutation1 = [];
+var permutation2 = [];
+var permutation3 = [];
+var permutation4 = [];
+var permutation5 = [];
+var permutation1H = [];
+var permutation2H = [];
+var permutation3H = [];
+var permutation4H = [];
+var permutation5H = [];
+var lands = [];
+var landsH = [];
+// ------------------BUCKETS FOR MANA POOL--------------------------
+// END OF VARIABLES
 
 
-var typeArray = [
-    ["plains", "p", "w"],
-    ["island", "i", "u"],
-    ["swamp", "s", "b"],
-    ["mountain", "m", "r"],
-    ["forest", "f", "g"]
-];
-
-var nonLandsArray = [
-    { name: "Reliquary Tower", cono: "254" },
-    { name: "Detection Tower", cono: "249" },
-    { name: "Druid of the Cowl", cono: "177" },
-    { name: "Cataclyst Elemental", cono: "132" }
-];
-
-// Colorless lands
-var rtower = ["1", "1", "1", "1", "1"];
-var dtower = ["1", "1", "1", "1", "1"];
-
-// Weird producers
-var celemental = [["R", "R", "R", "R", "R"], ["R", "R", "R", "R", "R"]];
-
-
-
-// When the document is loaded
 $(document).ready(function () {
 
+    // ------------------FUNCTIONS TO INITIALIZE RESOURCE BUTTONS--------------------------
+    function initButtons() { //Basic lands
+        for (i = 0; i < typeArray.length; i++) {
 
-    // outside() is the function that says: for every possible card, check each permutation of mana (checkP1-5) the player could have
+            var creButton = $("<button>");
+            creButton.addClass("mana-basic-button CLICKER").addClass("basic").addClass(typeArray[i][0]).addClass("clearfix");
+            creButton.attr("style", "box-sizing: border-box;");
+            creButton.attr("name", typeArray[i][0]);
+            creButton.attr("value", typeArray[i][1]);
+            creButton.html("<i class='ms ms-" + typeArray[i][2] + "'>")
+            $("#mana-tiles").append(creButton);
+        }
+    }
+
+    function initNBLButons() { //2 color non-basic lands
+        for (i = 0; i < nonBasicTypeArray.length; i++) {
+            var creButton = $("<button>");
+            creButton.text(nonBasicTypeArray[i].name);
+            creButton.attr("style", "background-image: url(https://img.scryfall.com/cards/large/en/m19/" + nonBasicTypeArray[i].cono + ".jpg)");
+            creButton.attr("name", nonBasicTypeArray[i].name);
+            creButton.attr("data-cono", nonBasicTypeArray[i].cono);
+            creButton.attr("value", nonBasicTypeArray[i].nn);
+            creButton.addClass("mana-nbl-button NBL CLICKER MULTI");
+            $("#mana-tiles").append(creButton);
+        }
+    }
+
+    function initFiveColor() { //5 color non-basic lands
+        for (i = 0; i < fiveColorArray.length - 1; i++) {
+            var creButton = $("<button>");
+            creButton.attr("style", "background-image: url(https://img.scryfall.com/cards/large/en/m19/" + fiveColorArray[i].cono + ".jpg)");
+            creButton.attr("name", fiveColorArray[i].name);
+            creButton.attr("data-cono", fiveColorArray[i].cono);
+            creButton.attr("value", fiveColorArray[i].nn);
+            creButton.addClass("mana-nbl-button 5C CLICKER MULTI");
+            creButton.text(fiveColorArray[i].name)
+            $("#mana-tiles").append(creButton);
+        }
+    }
+
+    function initGift() { //Gift of Paradise button (unique)
+        var creButton = $("<button>");
+        creButton.attr("style", "background-image: url(https://img.scryfall.com/cards/large/en/m19/" + fiveColorArray[4].cono + ".jpg)");
+        creButton.attr("name", "Gift of Paradise");
+        creButton.attr("data-cono", "184");
+        creButton.attr("value", "gift");
+        creButton.addClass("mana-nbl-button GIFT CLICKER MULTI");
+        creButton.text("Gift of Paradise");
+        $("#mana-tiles").append(creButton);
+    }
+
+    function initNonLands() { //Other sources
+        for (i = 0; i < nonLandsArray.length; i++) {
+            var creButton = $("<button>");
+            creButton.attr("style", "background-image: url(https://img.scryfall.com/cards/large/en/m19/" + nonLandsArray[i].cono + ".jpg)");
+            creButton.attr("name", nonLandsArray[i].name);
+            creButton.attr("data-cono", nonLandsArray[i].cono);
+            creButton.attr("value", nonLandsArray[i].nn);
+            creButton.addClass("mana-nbl-button OTHER CLICKER");
+            creButton.text(nonLandsArray[i].name)
+            $("#mana-tiles").append(creButton);
+        }
+    }
+    // ------------------FUNCTIONS TO INITIALIZE RESOURCE BUTTONS--------------------------
+
+
+    // ------------------FUNCTIONS TO CHECK MANA AGAINST CARD COST--------------------------
     function outside() {
         for (k = 0; k < cards.length; k++) {
-            
+
             var isAlreadyPayedFor = 0;
             if (checkP1() && isAlreadyPayedFor == 0) { // If any of the checks come back true, it means the player can afford the card
                 $("#calc-card-pool").append('<img class="cardPic" src="https://img.scryfall.com/cards/large/en/m19/' + cards[x].cono + '.jpg" width="120">'); // So append that card to the results
@@ -226,7 +269,6 @@ $(document).ready(function () {
     // checkP1 checks against permutation1, checkP2 checks against permutation2, ...
     function checkP1() {
         for (n = 0; n < cards[x].costH.length; n++) {
-
             var inc = permutation1.includes(cards[x].costH[n]); // Does permutationX include the mana in question? T/F
             var splP = permutation1.indexOf(cards[x].costH[n]); // If so, what is its index #?
             var splC = cards[x].cost.indexOf(permutation1[splP]); // And whatever is in that slot, find that value's index number inside the prototypeX array (for later splicing purposes)
@@ -350,127 +392,215 @@ $(document).ready(function () {
             return true;
         }
     }
+    // ------------------FUNCTIONS TO CHECK MANA AGAINST CARD COST--------------------------
 
 
-    function initNonLands() {
-        for (i = 0; i < nonLandsArray.length; i++) {
-            var creButton = $("<button>");
-            creButton.attr("style", "background-image: url(https://img.scryfall.com/cards/large/en/m19/" + nonLandsArray[i].cono + ".jpg)");
-            creButton.addClass("mana-nbl-button");
-            creButton.text(nonLandsArray[i].name)
-            $("#mana-tiles").append(creButton);
-        }
-    }
-
-    function initFiveColor() {
-        for (i = 0; i < fiveColorArray.length; i++) {
-            var creButton = $("<button>");
-            creButton.attr("style", "background-image: url(https://img.scryfall.com/cards/large/en/m19/" + fiveColorArray[i].cono + ".jpg)");
-            creButton.attr("name", nonBasicTypeArray[i].name);
-            creButton.addClass("mana-nbl-button");
-            creButton.text(fiveColorArray[i].name)
-            $("#mana-tiles").append(creButton);
-        }
-    }
-
-    function initNBLButons() {
-        for (i = 0; i < nonBasicTypeArray.length; i++) {
-            var creButton = $("<button>");
-            creButton.text(nonBasicTypeArray[i].name);
-            creButton.attr("style", "background-image: url(https://img.scryfall.com/cards/large/en/m19/" + nonBasicTypeArray[i].cono + ".jpg)");
-            creButton.attr("name", nonBasicTypeArray[i].name);
-            creButton.addClass("mana-nbl-button");
-            $("#mana-tiles").append(creButton);
-        }
-    }
-
-    function initButtons() {
-        for (i = 0; i < typeArray.length; i++) {
-            
-            var creButton = $("<button>");
-            creButton.addClass("mana-basic-button").addClass("basic").addClass(typeArray[i][0]).addClass("clearfix");
-            creButton.attr("style", "box-sizing: border-box;");
-            creButton.attr("name", typeArray[i][0]);
-            creButton.attr("value", typeArray[i][1]);
-            creButton.html("<i class='ms ms-" + typeArray[i][2] + "'>")
-            $("#mana-tiles").append(creButton);
-        }
-    }
-
+    // ------------------INITIALIZE CALCULATOR BUTTONS--------------------------
     $("#mana-tiles").append("<p class='buttonLabels'>Basics</p>");
     initButtons();
     $("#mana-tiles").append("<br><br><br><br><p class='buttonLabels'>Dual Lands</p>");
     initNBLButons();
     $("#mana-tiles").append("<br><br><br><br><div class='buttonLabels'>5 Color Sources</div>");
-    initFiveColor()
+    initFiveColor();
+    initGift();
     $("#mana-tiles").append("<br><br><p class='buttonLabels'>Other Stuff</p>");
     initNonLands();
+    // ------------------INITIALIZE CALCULATOR BUTTONS--------------------------
 
-    // Click event for basic lands
+    window.onscroll = function() {scrollFunction()};
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+            document.getElementById("topButton").style.display = "block";
+        } else {
+            document.getElementById("topButton").style.display = "none";
+        }
+    }
+
+    $("#topButton").on("click", function () {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    });
+
+    // ------------------BASIC LAND RESOURCE LISTENER--------------------------
     $(".basic").on("click", function () {
-       
         if (isCalc == false) {
-            // Adds picture of the corresponding land to the on-screen mana pool
             var pushSRC = "assets/images/" + $(this).attr("name") + ".jpg"
             var pushLand = $("<img>")
             pushLand.addClass("landRenderedImg");
             pushLand.attr("src", pushSRC)
-            pushLand.attr("height", "86")
-            $("#internal-land-container").append(pushLand);
-
+            $("#land-container").append(pushLand);
             // Which basic land was pressed?
             if ($(this).attr("value") == "p") {
-                // Push the coresponding color into the "lands" and "landsH" arrays
                 lands.push(pp);
                 landsH.push(pp);
             }
-
             if ($(this).attr("value") == "i") {
                 lands.push(ii);
                 landsH.push(ii);
             }
-
             if ($(this).attr("value") == "s") {
                 lands.push(ss);
                 landsH.push(ss);
             }
-
             if ($(this).attr("value") == "m") {
                 lands.push(mm);
                 landsH.push(mm);
             }
-
             if ($(this).attr("value") == "f") {
                 lands.push(ff);
                 landsH.push(ff);
             }
-
-            console.log(lands);
-            console.log(landsH);
         }
-
     });
+    // ------------------BASIC LAND RESOURCE LISTENER--------------------------
 
 
-    // Nonbasic lands will go here ----
-    $(".cb").on("click", function () {
-
-        $("#internal-land-container").append("CB");
-
-        lands.push(cb);
-        landsH.push(cb);
-
+    // ------------------NON-BASIC LAND RESOURCE LISTENER--------------------------
+    $(".NBL").on("click", function () {
+        if (hasDual == false) {
+            var pushLand = $("<img>");
+            var conoH = $(this).attr("data-cono");
+            var URL = "https://img.scryfall.com/cards/large/en/m19/" + conoH + ".jpg"
+            pushLand.attr("src", URL);
+            pushLand.addClass("landRenderedImg");
+            $("#land-container").append(pushLand);
+            // Which land land was pressed?
+            if ($(this).attr("value") == "cb") {
+                lands.push(cb);
+                landsH.push(cb);
+            }
+            if ($(this).attr("value") == "fs") {
+                lands.push(fs);
+                landsH.push(fs);
+            }
+            if ($(this).attr("value") == "fo") {
+                lands.push(fo);
+                landsH.push(fo);
+            }
+            if ($(this).attr("value") == "hl") {
+                lands.push(hl);
+                landsH.push(hl);
+            }
+            if ($(this).attr("value") == "mr") {
+                lands.push(mr);
+                landsH.push(mr);
+            }
+            if ($(this).attr("value") == "sq") {
+                lands.push(sq);
+                landsH.push(sq);
+            }
+            if ($(this).attr("value") == "sb") {
+                lands.push(sb);
+                landsH.push(sb);
+            }
+            if ($(this).attr("value") == "tg") {
+                lands.push(tg);
+                landsH.push(tg);
+            }
+            if ($(this).attr("value") == "te") {
+                lands.push(te);
+                landsH.push(te);
+            }
+            if ($(this).attr("value") == "ws") {
+                lands.push(ws);
+                landsH.push(ws);
+            }
+            hasDual = true;
+            $(".MULTI").css("opacity", "0.4");
+        }
     });
-    // --------------------------------
+    // ------------------NON-BASIC LAND RESOURCE LISTENER--------------------------
 
 
-    // Click event for the calculate button
+    // ------------------5 COLOR LAND RESOURCE LISTENER--------------------------
+    $(".5C").on("click", function () {
+        if (hasDual == false) {
+            var pushLand = $("<img>");
+            var conoH = $(this).attr("data-cono");
+            var URL = "https://img.scryfall.com/cards/large/en/m19/" + conoH + ".jpg"
+            pushLand.attr("src", URL);
+            pushLand.addClass("landRenderedImg");
+            $("#land-container").append(pushLand);
+            // Which land land was pressed?
+            if ($(this).attr("value") == "rspire") {
+                lands.push(rspire);
+                landsH.push(rspire);
+            }
+            if ($(this).attr("value") == "mlith") {
+                lands.push(mlith);
+                landsH.push(mlith);
+            }
+            if ($(this).attr("value") == "dhoard") {
+                lands.push(dhoard);
+                landsH.push(dhoard);
+            }
+            if ($(this).attr("value") == "ddisciple") {
+                lands.push(ddisciple);
+                landsH.push(ddisciple);
+            }
+            if ($(this).attr("value") == "gift") {
+                lands.push(gift);
+                landsH.push(gift);
+            }
+            hasDual = true;
+            $(".MULTI").css("opacity", "0.4");
+        }
+    });
+    // ------------------5 COLOR LAND RESOURCE LISTENER--------------------------
+
+
+    // ------------------GIFT LISTENER--------------------------
+    $(".GIFT").on("click", function () {
+        var pushLand = $("<img>");
+        var conoH = $(this).attr("data-cono");
+        var URL = "https://img.scryfall.com/cards/large/en/m19/" + conoH + ".jpg"
+        pushLand.attr("src", URL);
+        pushLand.addClass("landRenderedImg");
+        $("#land-container").append(pushLand);
+        lands.push(rspire);
+        lands.push(rspire);
+        landsH.push(rspire);
+        landsH.push(rspire);
+    });
+    // ------------------GIFT LISTENER--------------------------
+
+
+    // ------------------OTHER LAND RESOURCE LISTENER--------------------------
+    $(".OTHER").on("click", function () {
+        var pushLand = $("<img>");
+        var conoH = $(this).attr("data-cono");
+        var URL = "https://img.scryfall.com/cards/large/en/m19/" + conoH + ".jpg"
+        pushLand.attr("src", URL);
+        pushLand.addClass("landRenderedImg");
+        $("#land-container").append(pushLand);
+        // Which land land was pressed?
+        if ($(this).attr("value") == "rtower") {
+            lands.push(rtower);
+            landsH.push(rtower);
+        }
+        if ($(this).attr("value") == "dtower") {
+            lands.push(dtower);
+            landsH.push(dtower);
+        }
+        if ($(this).attr("value") == "dotc") {
+            lands.push(dotc);
+            landsH.push(dotc);
+        }
+        if ($(this).attr("value") == "celemental") {
+            lands.push(mm);
+            lands.push(mm);
+            landsH.push(mm);
+            landsH.push(mm);
+        }
+    });
+    // ------------------5 COLOR LAND RESOURCE LISTENER--------------------------
+
+
+    // ------------------CALCULATE BUTTON LISTENER--------------------------
     $("#calc-button").on("click", function () {
-
         // Turns off the functionality of the buttons until reset
         isCalc = true;
-
-        // For each land chosen, create the 5 possible permutations those lands could produce
         for (z = 0; z < lands.length; z++) {
             permutation1.push(lands[z][0]);
             permutation2.push(lands[z][1]);
@@ -483,17 +613,13 @@ $(document).ready(function () {
             permutation4H.push(lands[z][3]);
             permutation5H.push(lands[z][4]);
         }
-
-        // Then run the "outside();" function, where most of our processing is done
         outside();
-
-
     });
+    // ------------------CALCULATE BUTTON LISTENER--------------------------
 
 
-    // On click event for the reset button
+    // ------------------RESET BUTTON LISTENER--------------------------
     $("#reset-button").on("click", function () {
-
         // Sets lands and permutations to their origial empty value; resets cards[x].cost; empties the screen
         lands = [];
         landsH = [];
@@ -508,14 +634,14 @@ $(document).ready(function () {
         permutation3H = [];
         permutation4H = [];
         permutation5H = [];
+        hasDual = false;
         isCalc = false;
         cards = cardsOneH;
-        $("#internal-land-container").empty();
+        $(".MULTI").css("opacity", "1");
+        $("#land-container").empty();
         $("#calc-card-pool").empty();
-
-
     });
-
+    // ------------------RESET BUTTON LISTENER--------------------------
 
 
 });
