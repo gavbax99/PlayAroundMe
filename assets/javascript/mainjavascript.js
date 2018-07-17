@@ -407,7 +407,7 @@ $(document).ready(function () {
     initNonLands();
     // ------------------INITIALIZE CALCULATOR BUTTONS--------------------------
 
-    window.onscroll = function() {scrollFunction()};
+    window.onscroll = function () { scrollFunction() };
 
     function scrollFunction() {
         if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
@@ -552,16 +552,20 @@ $(document).ready(function () {
 
     // ------------------GIFT LISTENER--------------------------
     $(".GIFT").on("click", function () {
-        var pushLand = $("<img>");
-        var conoH = $(this).attr("data-cono");
-        var URL = "https://img.scryfall.com/cards/large/en/m19/" + conoH + ".jpg"
-        pushLand.attr("src", URL);
-        pushLand.addClass("landRenderedImg");
-        $("#land-container").append(pushLand);
-        lands.push(rspire);
-        lands.push(rspire);
-        landsH.push(rspire);
-        landsH.push(rspire);
+        if (hasDual == false) {
+            var pushLand = $("<img>");
+            var conoH = $(this).attr("data-cono");
+            var URL = "https://img.scryfall.com/cards/large/en/m19/" + conoH + ".jpg"
+            pushLand.attr("src", URL);
+            pushLand.addClass("landRenderedImg");
+            $("#land-container").append(pushLand);
+            lands.push(rspire);
+            lands.push(rspire);
+            landsH.push(rspire);
+            landsH.push(rspire);
+            hasDual = true;
+            $(".MULTI").css("opacity", "0.4");
+        }
     });
     // ------------------GIFT LISTENER--------------------------
 
