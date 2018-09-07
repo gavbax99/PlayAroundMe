@@ -648,4 +648,18 @@ $(document).ready(function () {
     // ------------------RESET BUTTON LISTENER--------------------------
 
 
+    // ------------------NAV BUTTONS-------------------------------
+    $(".logo-hover").on("click", function () {
+        window.location.href = "http://www.google.com";
+    });
+
+    $(".GitHub").on("click", function() {
+        window.location.href = "https://github.com/gavbax99/PlayAroundMe";
+    });
+
+    $(".howto").on("click", function() {
+        window.location.href = "https://github.com/gavbax99/PlayAroundMe";
+    });
+
+
 });

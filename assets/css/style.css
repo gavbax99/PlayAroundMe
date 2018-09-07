@@ -24,9 +24,9 @@ html {
 }
 
 body {
-    background-image: url(../images/moon.jpg);
-    background-repeat: no-repeat;
+    background-image: url(../images/jace2.jpg);
     background-size: cover;
+    background-repeat: no-repeat;
     background-attachment: fixed;
     font-family: sans-serif;
 }
@@ -42,6 +42,7 @@ body {
 }
 
 .buttonLabels {
+    color: black;
     padding-left: 10px;
     font-size: 10px;
     font-style: italic;
@@ -74,16 +75,17 @@ button {
 }
 
 #topButton {
+    line-height: 29px;
     width: 50px;
-    height: 50px;
+    height: 30px;
     margin: 0 auto;
     display: none;
     bottom: 20px;
     z-index: 99;
-    font-size: 12px;
-    border: 2px solid #fff;
+    font-size: 14px;
+    border: 3px solid #fff;
     outline: none;
-    background-color: #525252;
+    background-color: #000;
     fill-opacity: 0.5;
     color: #fff;
     cursor: pointer;
@@ -126,7 +128,7 @@ header {
 .calcutron {
     float: left;
     color: #ff995a;
-    text-shadow: 1px 1px #ff705a;
+    text-shadow: 1px 1px #b34400;
 }
 
 .setName {
@@ -134,16 +136,54 @@ header {
     margin: 2px 0 0 5px;
 }
 
+.logo-hover {
+    cursor: pointer;
+}
+
 #header-container {
     height: inherit;
-    width: var(--fullWidth);
     margin: 0 auto;
 }
 
 #logo-container {
     height: inherit;
-    width: 54px;
     float: left;
+}
+
+.pam-title {
+    float: left;
+    color: white;
+    line-height: 54px;
+    margin-left: 20px;
+}
+
+.howto {
+    cursor: pointer;
+    margin-top: 14px;
+    float: right;
+    margin-right: 20px;
+    color: white;
+    padding: 3px 6px;
+    border: 1px solid white;
+    border-radius: 4px;
+}
+
+.howto:hover {
+    background-color: rgb(63, 63, 63);
+}
+
+.GitHub {
+    cursor: pointer;
+    margin-top: 14px;
+    float: right;
+    color: white;
+    padding: 3px 6px;
+    border: 1px solid white;
+    border-radius: 4px;
+}
+
+.GitHub:hover {
+    background-color: rgb(63, 63, 63);
 }
 
 #menu-container {
@@ -285,6 +325,7 @@ header {
 }
 
 #calc-button {
+    cursor: pointer !important;
     float: left;
     width: 256px;
     padding: 14px;
@@ -299,6 +340,7 @@ header {
 }
 
 #reset-button {
+    cursor: pointer !important;
     float: left;
     width: 169px;
     padding: 14px;
@@ -389,7 +431,17 @@ header {
     cursor: pointer;
 }
 
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 500px) {
+    .pam-title {
+        display: none;
+    }
+
+    body {
+        background-image: url(../images/halftone.png);
+        background-size: cover;
+        background-repeat: repeat;
+        font-family: sans-serif;
+    }
 
     header {
     width: 100%;
@@ -513,6 +565,7 @@ header {
     }
 
     #calc-button {
+    cursor: pointer !important;
     float: left;
     width: 66%;
     padding: 14px;
@@ -527,6 +580,7 @@ header {
     }
 
     #reset-button {
+    cursor: pointer !important;
     float: left;
     width: 30%;
     padding: 14px;
