@@ -15,6 +15,7 @@
     <link rel="shortcut icon" href="assets/images/favicon.png">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="assets/javascript/mainjavascript.js"></script>
+    <script src="assets/javascript/dropdownSetSelector.js"></script>
 
 
 </head>
@@ -26,15 +27,24 @@
         <div id="header-container">
 
             <div id="logo-container">
-                <img class="logo-hover"  src="assets/images/p_logo.svg" width="35" style="margin-top:8px;">
+                <img class="logo-hover" src="assets/images/p_logo.svg" width="28" style="margin-top:8px;">
             </div>
             <div class="pam-title">PLAYAROUNDMTG.COM</div>
-            <div class="GitHub">GitHub</div>
-            <div class="howto">How-To</div>
+
+
+            <div class="dropdown set-form">
+                <button onclick="myFunction()" class="dropbtn">Select a Set</button>
+                <div id="myDropdown" class="dropdown-content">
+                    <a href="./index.html">M19<img style="float: right" src="https://images1.mtggoldfish.com/spoiler_pages/m19-set-symbol.png" height="15"></a>
+                </div>
+            </div>
+
+
+            <!-- <div class="GitHub">GitHub</div>
+            <div class="howto">How-To</div> -->
         </div>
 
     </header>
-
 
     <div id="calculator" class="clearfix">
 
@@ -42,11 +52,9 @@
 
         <div id="calculatorName" class="clearfix">
             <div class="info">
-                <div class="calcutron">MTG Card Finder</div>
-                <div class="setName">
-                    <img src="https://images1.mtggoldfish.com/spoiler_pages/m19-set-symbol.png" height="15">
-                </div>
+                <div class="calcutron">PAMTG Calculator</div>
             </div>
+            <img class="setName" src="https://images1.mtggoldfish.com/spoiler_pages/m19-set-symbol.png" height="20">
         </div>
 
         <div id="mana-tiles" class="clearfix"></div>
@@ -72,7 +80,7 @@
 
 
     <div id="topButtonHolder"><button id="topButton" title="Go to top">^</button></div>
-    
+
 
 
 </body>

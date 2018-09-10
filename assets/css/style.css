@@ -96,7 +96,7 @@ button {
 
 header {
     width: 100%;
-    height: 54px;
+    height: 44px;
     background-color:  #0e0e0e;
     border-bottom: 0px solid #373737;
     padding: 0 20px;
@@ -126,13 +126,14 @@ header {
 }
 
 .calcutron {
+    font-size: 22px;
     float: left;
     color: #ff995a;
     text-shadow: 1px 1px #b34400;
 }
 
 .setName {
-    float: left;
+    float: right;
     margin: 2px 0 0 5px;
 }
 
@@ -153,13 +154,13 @@ header {
 .pam-title {
     float: left;
     color: white;
-    line-height: 54px;
+    line-height: 46px;
     margin-left: 20px;
 }
 
 .howto {
     cursor: pointer;
-    margin-top: 14px;
+    margin-top: 10px;
     float: right;
     margin-right: 20px;
     color: white;
@@ -174,7 +175,7 @@ header {
 
 .GitHub {
     cursor: pointer;
-    margin-top: 14px;
+    margin-top: 10px;
     float: right;
     color: white;
     padding: 3px 6px;
@@ -185,6 +186,68 @@ header {
 .GitHub:hover {
     background-color: rgb(63, 63, 63);
 }
+
+
+/* -------------------------------------------- Dropdown set selector */
+
+.set-form {
+    height: 100%;
+    width: 200px;
+    float: right;
+    padding: 3px 0 3px 0;
+    border: 1px solid black;
+}
+
+/* Dropdown Button */
+.dropbtn {
+    background-color: #fff;
+    color: black;
+    height: 100%;
+    width: 200px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover, .dropbtn:focus {
+    background-color: #87cefa;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    width: 200px;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:block;}
+
+
+/* -------------------------------------------- Dropdown set selector */
+
 
 #menu-container {
     height: inherit;
@@ -445,7 +508,7 @@ header {
 
     header {
     width: 100%;
-    height: 54px;
+    height: 44px;
     background-color:  #0e0e0e;
     border-bottom: 2px solid #1a1a1a;
     padding: 0 20px;
@@ -459,6 +522,8 @@ header {
     border-bottom: 4px solid  #0e0e0e;
     margin: 0 auto;
     padding: 20px;
+    padding-top: 26px;
+    padding-bottom: 26px;
     }
 
     #calc-card-pool {

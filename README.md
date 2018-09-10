@@ -16,7 +16,7 @@ Currently working for M19.
 ![How to add mana](/assets/images/Uclick.PNG)
 
 
-2. Click the "Play Around Me" button to see all possible instants, tricks, or flash creatures your opponent could possibly cast with their open mana!
+2. Click the "Play Around Me" button to see all possible instants, tricks, or flash creatures your opponent could possibly cast with their open mana.
 
 ![What your opponent may have](/assets/images/UUexample.jpg)
 
@@ -26,4 +26,4 @@ Currently working for M19.
 
 ***
 
-Currently only works with one multi mana source. Still working on an efficient way to create a large number of permutations!
+Currently only works with one multi mana source. Still working on an efficient way to create a large number of permutations.
