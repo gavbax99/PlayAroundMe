@@ -1,87 +1,79 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en">
 
 <head>
+    <!-- Meta setup -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+    <!-- Page information -->
+    <title>Play Around MTG</title>
+    <meta name="description" content="PAM calculator">
+	<meta name="author" content="Gavin Baxter, Front End Developer | gavinbaxter.com">
+	<link rel="icon" href="./assets/images/favicon.png" type="image/png">
 
-    <title>PLAYAROUND MTG</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="author" content="Gavin Baxter">
-    <meta name="description" content="Use PLAYAROUND MTG Calculator to play around cards your opponent may have in their hand in a game of Magic the Gathering limited draft">
-    <link rel="stylesheet" href="assets/css/reset.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link href="assets/css/mana.css" rel="stylesheet" type="text/css">
-    <link rel="shortcut icon" href="assets/images/favicon.png">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="assets/javascript/mainjavascript.js"></script>
-    <script src="assets/javascript/dropdownSetSelector.js"></script>
+    <!-- Style links -->
+    <link rel="stylesheet" type="text/css" href="./assets/css/styles.css" />
 
-
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
 <body>
 
-    <header>
+	<div class="flex-full flex-row main-container">
 
-        <div id="header-container">
+		<!-- Calculator -->
+		<div class="flex-full flex-col calculator">
+			<!-- Sources -->
+			<div class="flex-full flex-row sources-container"></div>
+			
+			<!-- Title -->
+			<div class="flex-full flex-row title-container" name="hey">
+				<h1 class="title">PAMTG Calculator</h1>
+			</div>
 
-            <div id="logo-container">
-                <img class="logo-hover" src="assets/images/p_logo.svg" width="28" style="margin-top:8px;">
-            </div>
-            <div class="pam-title">PLAYAROUNDMTG.COM</div>
+			<!-- Land buttons -->
+			<div class="lands">
+				<!-- dynamically generated -->
+			</div>
 
+			<!-- Submit buttons -->
+			<div class="flex-full flex-row submit-button-container">
+				<div class="flex-full submit-button">Calculate</div>
+				<div class="flex-full clear-button">Clear</div>
+			</div>
+		</div>    
 
-            <div class="dropdown set-form">
-                <button onclick="myFunction()" class="dropbtn">Select a Set</button>
-                <div id="myDropdown" class="dropdown-content">
-                    <a href="./index.html">M19<img style="float: right" src="https://images1.mtggoldfish.com/spoiler_pages/m19-set-symbol.png" height="15"></a>
-                </div>
-            </div>
+		<!-- Output -->
+		<div class="flex-full flex-col card-output-container">
+			<h2 class="card-output-title">Play Around These</h2>
+			<p class="card-output-sort">Sort By:</p>
+			<div class="flex-full flex-row sort-container">
+				<button class="sort-button severity">Impact</button>
+				<button class="sort-button color">Color</button>
+				<button class="sort-button cmc">CMC</button>
+			</div>
 
+			<!-- If no cards output yet -->
+			<p class="no-cards-yet">Input your opponent's<br>open mana to begin.</p>
 
-            <!-- <div class="GitHub">GitHub</div>
-            <div class="howto">How-To</div> -->
-        </div>
+			<!-- List of output cards -->
+			<div class="flex-full flex-row card-output">
+				<!-- dynamically generated -->
+			</div>
 
-    </header>
+		</div>
 
-    <div id="calculator" class="clearfix">
-
-        <div id="land-container" class="clearfix"></div>
-
-        <div id="calculatorName" class="clearfix">
-            <div class="info">
-                <div class="calcutron">PAMTG Calculator</div>
-            </div>
-            <img class="setName" src="https://images1.mtggoldfish.com/spoiler_pages/m19-set-symbol.png" height="20">
-        </div>
-
-        <div id="mana-tiles" class="clearfix"></div>
-
-        <div id="button-container">
-            <div id="calc-button">Play Around Me</div>
-
-            <div id="reset-button">Reset</div>
-        </div>
-
-    </div>
-
-
-
-
-    <div id="calc-container">
-
-        <div id="set-logo-bottom"></div>
-
-    </div>
-
-    <div id="calc-card-pool" class="clearfix"></div>
+	</div>
 
 
-    <div id="topButtonHolder"><button id="topButton" title="Go to top">^</button></div>
 
 
+    <!-- Javascript links -->
+    <script src="./assets/sets/m21/m21.js"></script>
+    <script src="./assets/js/calculator.js"></script>
 
 </body>
 
