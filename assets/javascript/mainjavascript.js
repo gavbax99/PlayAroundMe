@@ -1,3 +1,9 @@
+$(".mana-basic-button").on("click", function () {
+    let a = $(this).attr("name");
+    console.log(a);
+})
+
+
 // ------------------GLBAL VARIABLES--------------------------
 var x = 0;
 var isCalc = false;
