@@ -1,0 +1,9 @@
+.output {
+	display: flex;
+	flex: 1;
+	background-repeat: repeat;
+}
+
+.M21bg {
+	background-image: url("../../Sets/M21bg.jpg");
+}

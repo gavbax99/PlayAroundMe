@@ -1,0 +1,19 @@
+.sources-container {
+	width: calc(100% - 10px);
+    min-height: 111px;
+    flex-wrap: wrap;
+    background-color: #fff;
+    border-radius: 5px;
+    margin: 0 auto;
+    padding: 7px;
+	text-align: center;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.source-list-item {
+	margin-left: -26px;
+}
+
+.source-list-item:first-child {
+	margin-left: 0;
+}
