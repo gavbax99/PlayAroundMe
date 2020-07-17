@@ -1,0 +1,5 @@
+.regbasics-button,
+.regbasics-button:focus,
+.regbasics-button:active {
+	height: 60px;
+}

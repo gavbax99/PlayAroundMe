@@ -1,0 +1,31 @@
+.flex-full {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.flex-col {
+	flex-direction: column;
+}
+
+.flex-row {
+	flex-direction: row;
+}
+
+#root, body, html {
+	min-height: 100vh;
+}
+
+#root {
+	display: flex;
+}
+
+body {
+	font-family: sans-serif !important;
+}
+
+.screen {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+}

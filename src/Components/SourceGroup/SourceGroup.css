@@ -1,0 +1,14 @@
+.tagline {
+    width: 100%;
+    padding: 0 5px;
+    margin-top: 20px;
+    font-size: 12px;
+	font-weight: 300;
+	color: #888888;
+}
+
+.land-container {
+	width: 100%;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
