@@ -1,0 +1,9 @@
+.payed-for-card-container {
+	width: 245px;
+	display: block;
+	margin: 10px;
+}
+
+.payed-for-card {
+	width: 100%;
+}

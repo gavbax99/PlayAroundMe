@@ -14,7 +14,7 @@
     border: none;
     text-align: center;
 	font-weight: 700;
-	box-shadow: 0 2px 5px 0 rgba(0, 0, 0,.14);
+	box-shadow: 0 2px 5px 0 rgba(0, 0, 0,.10);
 	outline: none;
 
     font-size: 12px;
@@ -27,11 +27,10 @@
     background-size: 130%;
 	background-position: 50% 20%;
 	
-	transition: 0.3s;
-	transition-timing-function: cubic-bezier(.61,.06,.38,.91);
+	transition: 0.2s ease;
 	cursor: pointer !important;
 }
 
 .land-button:hover {
-	transform: translate(0,-3px);
+	transform: translate(0, -2px);
 }

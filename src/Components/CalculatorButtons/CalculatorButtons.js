@@ -3,8 +3,11 @@ import "./CalculatorButtons.css";
 
 import SourcesContainer from "../SourcesContainer/SourcesContainer";
 import SourceGroup from "../SourceGroup/SourceGroup";
+import BottomButtons from "../BottomButtons/BottomButtons";
 
+import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
+import * as actionCreators from "../../actions/actions";
 
 class CalculatorButtons extends Component {
 
@@ -23,23 +26,21 @@ class CalculatorButtons extends Component {
 				<SourcesContainer />
 
 				<div className="flex-full flex-row title-container">
-					<h1>Input Sources</h1>
-					<img src={this.props.storeData.setInfo.calculatorIcon} width="50" alt="Current set icon" />
+					<h1>Mana Sources</h1>
+					<img src={`./assets/setIcons/${this.props.storeData.setInfo.code}black.svg`} height="20" alt="Current set icon" />
 				</div>
 
 				<div id="land-output" className="land-output">
 					{renderManaSources}
 				</div>
 
-				<div className="flex-full flex-row submit-button-container">
-					<div className="flex-full submit-button">Calculate</div>
-					<div className="flex-full clear-button">Clear</div>
-				</div>
+				<BottomButtons />
 			</div>
 		);
 	};
 
 };
 
-const mapStateToProps = state => ({ storeData: state.setData });
-export default connect(mapStateToProps)(CalculatorButtons);
+const mapStateToProps = state => ({storeData: state.setData});
+const mapDispatchToProps = dispatch => (bindActionCreators(actionCreators, dispatch));
+export default connect(mapStateToProps, mapDispatchToProps)(CalculatorButtons);

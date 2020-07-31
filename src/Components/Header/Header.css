@@ -1,5 +1,6 @@
 .header-container {
 	display: flex;
+	position: relative;
 	justify-content: space-between;
 	align-items: center;
     font-family: sans-serif;
@@ -28,19 +29,5 @@
 }
 
 .header-link:hover {
-	background-color: #464646;
+	background-color: #575757;
 }
-
-/* .header-link:after {
-	display: block;
-	width: 80%;
-	margin: 2px auto 0;
-	content: '';
-	border-bottom: solid 1px #fff;  
-	transform: scaleX(0);  
-	transition: transform 150ms ease-in-out;
-} */
-
-/* .header-link:hover:after { 
-	transform: scaleX(1);
-} */

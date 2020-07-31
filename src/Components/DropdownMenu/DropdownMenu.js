@@ -15,17 +15,22 @@ class DropdownMenu extends Component {
 		this.setState({ hiddenMenu: !this.state.hiddenMenu });
 	}
 
-	// test = () => {
-		// this works - action
-		// this.props.changeSet("setM21");
-	// }
+	changeSet = (e) => {
+		console.log(e.target.getAttribute("set"));
+		this.toggleMenu();
+		this.props.updatePayedForArray([])
+		this.props.updateSourceArray([]);
+		this.props.changeSet(e.target.getAttribute("set"));
+	}
 
 	render = () => {
 		const iconPath = `./assets/setIcons/${this.props.storeData.setInfo.code}black.svg`;
 
 		let hiddenMenuClasses = "set-list hidden";
+		let fullCloseHiddenMenu = "hidden";
 		if (this.state.hiddenMenu) {
 			hiddenMenuClasses = "set-list"
+			fullCloseHiddenMenu = "full-close"
 		}
 
 		return (
@@ -36,16 +41,20 @@ class DropdownMenu extends Component {
 					<img src="./assets/downarrow.svg" width="8" alt="Down arrow icon"/>
 				</div>
 
-				<div id="menu-list" className={hiddenMenuClasses}>
+				<div className={fullCloseHiddenMenu} onClick={this.toggleMenu}></div>
 
-					<button className="flex-full flex-row set-button">
-						<img className="set-icon" src="./assets/setIcons/M21black.svg" alt="M21 set icon"/>
-						<span className="set-name set-name-list">Core Set 2021</span>
+				<div className={hiddenMenuClasses}>
+
+					{/* Jumpstart */}
+					<button className="flex-full flex-row set-button" set="setJMP" onClick={this.changeSet}>
+						<img className="set-icon" src="./assets/setIcons/JMPblack.svg" alt="Jumpstart set icon" set="setJMP"/>
+						<span className="set-name set-name-list" set="setJMP">Jumpstart</span>
 					</button>
 
-					<button className="flex-full flex-row set-button">
-						<img className="set-icon" src="./assets/setIcons/IKOblack.svg" alt="Ikoria set icon"/>
-						<span className="set-name set-name-list">Ikoria</span>
+					{/* M21 */}
+					<button className="flex-full flex-row set-button" set="setM21" onClick={this.changeSet}>
+						<img className="set-icon" src="./assets/setIcons/M21black.svg" alt="M21 set icon" set="setM21"/>
+						<span className="set-name set-name-list" set="setM21">Core Set 2021</span>
 					</button>
 
 				</div>

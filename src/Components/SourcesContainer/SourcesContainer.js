@@ -16,10 +16,10 @@ class SourcesContainer extends Component {
 
 	render = () => {
 		const scryfall = "https://img.scryfall.com/cards/large/front/";
-		const renderSources = this.props.storeData.map((sourceImage, i) => {
+		const renderSources = this.props.storeData.map((sourceObj, i) => {
 			return (
-				<li className="source-list-item" key={`${sourceImage}${i}`} onClick={this.removeSource}>
-					<img src={`${scryfall}${sourceImage}.jpg`} height="95" alt="land" i={i} />
+				<li className="source-list-item" key={`${sourceObj.image}${i}`} onClick={this.removeSource}>
+					<img src={`${scryfall}${sourceObj.image}.jpg`} height="95" alt="land" i={i} />
 				</li>
 			);
 		});

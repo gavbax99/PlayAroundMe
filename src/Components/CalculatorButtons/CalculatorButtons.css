@@ -1,46 +1,18 @@
 .lands {
-	max-width: 550px;
+	max-width: 555px;
+	min-width: 555px;
 	width: 100%;
 	padding: 20px 15px 10px;
-	background-color: #e2e2e2;
+	background-color: #e9e9e9;
 }
 
 .title-container {
     width: 100%;
     justify-content: space-between;
-	font-size: 22px;
+	font-size: 18px;
 	font-weight: 500;
-    color: #ff995a;
-    /* text-shadow: 1px 1px #b34400; */
+    color: #252525;
 	margin-top: 20px;
     margin-bottom: 20px;
     padding: 0 5px;
-}
-
-.submit-button-container {
-	padding: 0 5px;
-    width: 100%;
-    justify-content: space-between;
-    margin-top: 20px;
-}
-
-.submit-button {
-    width: calc(66% - 5px);
-    cursor: pointer !important;
-    padding: 14px 0;
-    font-size: 18px;
-    background-color: #ff995a;
-    border: 3px solid #fe8031;
-    border-radius: 2px;
-
-}
-
-.clear-button {
-    width: calc(33% - 5px);
-    cursor: pointer !important;
-    padding: 14px 0;
-    font-size: 18px;
-    background-color: #87cefa;
-    border: 3px solid #51b6f6;
-    border-radius: 2px;
 }

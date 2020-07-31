@@ -1,0 +1,42 @@
+.submit-button-container {
+	padding: 0 5px;
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 35px;
+}
+
+.submit-button,
+.submit-button:active,
+.submit-button:focus {
+	position: relative;
+    width: calc(66% - 5px);
+    cursor: pointer !important;
+    padding: 16px 0;
+    font-size: 18px;
+    color: #fff;
+    background-color: #4587ff;
+    border-radius: 3px;
+    transition: 0.3s;
+    transition-timing-function: cubic-bezier(.61,.06,.38,.91);
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .2);
+}
+
+.clear-button,
+.clear-button:active,
+.clear-button:focus {
+	position: relative;
+    width: calc(33% - 5px);
+    cursor: pointer !important;
+    padding: 16px 0;
+	font-size: 18px;
+	color: #252525;
+    background-color: #fff;
+	border-radius: 3px;
+	transition: 0.2s ease;
+	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .1);
+}
+
+.submit-button:hover,
+.clear-button:hover {
+	transform: translate(0, -2px);
+}

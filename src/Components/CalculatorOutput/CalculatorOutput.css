@@ -1,9 +1,73 @@
 .output {
-	display: flex;
 	flex: 1;
 	background-repeat: repeat;
+    align-items: center;
+    justify-content: flex-start;
+    align-content: flex-start;
 }
 
+.output-get-started {
+	font-size: 14px;
+	color: #252525;
+}
+
+.sort-container {
+	width: 100%;
+	padding: 0 20px;
+	min-height: 55px;
+	justify-content: flex-start;
+	align-items: center;
+	background-color: #d6d6d6;
+}
+
+.output-title {
+	font-size: 14px;
+	color: #252525;
+}
+
+.sort-button,
+.sort-button:active,
+.sort-button:focus {
+    cursor: pointer !important;
+    padding: 8px 14px;
+	font-size: 14px;
+	margin-left: 20px;
+	color: #fff;
+    background-color: #4587ff;
+	border: none;
+	outline: none;
+	border-radius: 3px;
+	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .05);
+	transition: 0.2s ease;
+}
+
+.sort-button:hover {
+	transform: translate(0, -2px);
+}
+
+.rendered-payed-for-container {
+	width: 100%;
+	padding: 10px 10px 0;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	justify-content: center;
+	align-content: flex-start;
+}
+
+.hider {
+	display: none;
+}
+
+.flex-centered {
+	align-items: center;
+	justify-content: center;
+}
+
+/* SET ICON BGS */
 .M21bg {
 	background-image: url("../../Sets/M21bg.jpg");
+}
+
+.JMPbg {
+	background-image: url("../../Sets/JMPbg.jpg");
 }
