@@ -4,7 +4,7 @@ import "./PayedForCard.css";
 class PayedForCard extends Component {
 
 	render() {
-		const scryfall = "https://img.scryfall.com/cards/large/front/";
+		const scryfall = "https://img.scryfall.com/cards/normal/front/";
 
 		return (
 			<div className="flex-full payed-for-card-container">

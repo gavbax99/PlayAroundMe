@@ -26,7 +26,7 @@ class DropdownMenu extends Component {
 	render = () => {
 		const iconPath = `./assets/setIcons/${this.props.storeData.setInfo.code}black.svg`;
 
-		let hiddenMenuClasses = "set-list hidden";
+		let hiddenMenuClasses = "set-list set-visibility";
 		let fullCloseHiddenMenu = "hidden";
 		if (this.state.hiddenMenu) {
 			hiddenMenuClasses = "set-list"
@@ -46,10 +46,10 @@ class DropdownMenu extends Component {
 				<div className={hiddenMenuClasses}>
 
 					{/* Jumpstart */}
-					<button className="flex-full flex-row set-button" set="setJMP" onClick={this.changeSet}>
+					{/* <button className="flex-full flex-row set-button" set="setJMP" onClick={this.changeSet}>
 						<img className="set-icon" src="./assets/setIcons/JMPblack.svg" alt="Jumpstart set icon" set="setJMP"/>
 						<span className="set-name set-name-list" set="setJMP">Jumpstart</span>
-					</button>
+					</button> */}
 
 					{/* M21 */}
 					<button className="flex-full flex-row set-button" set="setM21" onClick={this.changeSet}>

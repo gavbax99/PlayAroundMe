@@ -1,0 +1,38 @@
+.creator-screen {
+	flex: 1;
+	align-items: flex-start;
+	padding: 1rem;
+}
+
+.creator-input-container {
+	width: 400px;
+}
+
+.creator-input {
+	padding: 0.5rem;
+	width: 100%;
+}
+
+.mt1 {
+	margin-top: 1rem;
+}
+
+.mb1 {
+	margin-bottom: 1rem;
+}
+
+.creator-submit {
+	width: 100%;
+	height: 40px;
+	text-align: center;
+	margin-top: 1rem;
+}
+
+.creator-output {
+	width: 80%;
+	border: 1px solid grey;
+	line-height: 1.25;
+	padding: 0.5rem;
+	text-align: left;
+	margin-left: 1rem;
+}

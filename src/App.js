@@ -8,17 +8,29 @@ import './Reset.css';
 import Header from './Components/Header/Header';
 import Calculator from './Components/Calculator/Calculator';
 import Modal from './Components/Modal/Modal';
+import SetCreator from './Components/SetCreator/SetCreator';
 
 class App extends Component {
 
 	render() {
-		return (
-			<div className="screen">
-				<Header />
-				<Calculator />
-				<Modal />
-			</div>
-		);
+
+		const href = window.location.href;
+
+		if (href.includes("setcreator")) {
+			return (
+				<div className="screen">
+					<SetCreator />
+				</div>
+			);
+		} else {
+			return (
+				<div className="screen">
+					<Header />
+					<Calculator />
+					<Modal />
+				</div>
+			);
+		}
 	};
 
 };
