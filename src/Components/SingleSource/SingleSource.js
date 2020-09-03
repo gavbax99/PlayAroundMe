@@ -1,14 +1,16 @@
+// React and CSS
 import React, { Component } from "react";
 import "./SingleSource.css";
 
+// Redux
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import * as actionCreators from "../../actions/actions";
 
 class SingleSource extends Component {
 
+	// pushes a mana source to calculator
 	pushSource = (e) => {
-
 		// calculate permutations
 		const perms = this.props.storeData.reduce((t, val) => {
 			return val.perms * t
@@ -43,6 +45,7 @@ class SingleSource extends Component {
 		this.props.updateSourceArray([...this.props.storeData, newObj]);
 	}
 
+	// opens modal
 	openModal = obj => {
 		const newObj = {
 			show: true,
@@ -53,7 +56,7 @@ class SingleSource extends Component {
 	}
 
 	render() {
-		const scryfall = "https://img.scryfall.com/cards/large/front/";
+		const scryfall = "https://img.scryfall.com/cards/small/front/";
 
 		return (
 			<button 
@@ -73,6 +76,7 @@ class SingleSource extends Component {
 
 };
 
+// Redux
 const mapStateToProps = state => ({storeData: state.sourceArr});
 const mapDispatchToProps = dispatch => (bindActionCreators(actionCreators, dispatch));
 export default connect(mapStateToProps, mapDispatchToProps)(SingleSource);

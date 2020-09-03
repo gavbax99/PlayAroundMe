@@ -1,8 +1,11 @@
+// React and CSS
 import React, { Component } from "react";
 import "./CalculatorOutput.css";
 
+// Component
 import PayedForCard from "../PayedForCard/PayedForCard";
 
+// Redux
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import * as actionCreators from "../../actions/actions";
@@ -110,6 +113,7 @@ class CalculatorOutput extends Component {
 
 };
 
+// Redux
 const mapStateToProps = state => ({
 	storeSetData: state.setData,
 	storePayedFor: state.payedForArr,

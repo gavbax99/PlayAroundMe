@@ -1,10 +1,13 @@
+// React
 import React, { Component } from "react";
 import "./CalculatorButtons.css";
 
+// Components
 import SourcesContainer from "../SourcesContainer/SourcesContainer";
 import SourceGroup from "../SourceGroup/SourceGroup";
 import BottomButtons from "../BottomButtons/BottomButtons";
 
+// Redux
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import * as actionCreators from "../../actions/actions";
@@ -12,6 +15,7 @@ import * as actionCreators from "../../actions/actions";
 class CalculatorButtons extends Component {
 
 	render() {
+		// Render mana source categories
 		const renderManaSources = this.props.storeData.sources.sourceOrder.map((str, i) => {
 			return (
 				<SourceGroup 
@@ -26,7 +30,7 @@ class CalculatorButtons extends Component {
 				<SourcesContainer />
 
 				<div className="flex-full flex-row title-container">
-					<h1>Mana Sources</h1>
+					<h1 className="fw-bold">Mana Sources</h1>
 					<img src={`./assets/setIcons/${this.props.storeData.setInfo.code}black.svg`} height="20" alt="Current set icon" />
 				</div>
 
@@ -41,6 +45,7 @@ class CalculatorButtons extends Component {
 
 };
 
+// Redux
 const mapStateToProps = state => ({storeData: state.setData});
 const mapDispatchToProps = dispatch => (bindActionCreators(actionCreators, dispatch));
 export default connect(mapStateToProps, mapDispatchToProps)(CalculatorButtons);

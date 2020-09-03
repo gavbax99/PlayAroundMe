@@ -1,6 +1,8 @@
+// React and CSS
 import React, { Component } from "react";
 import "./SourceGroup.css";
 
+// Components
 import SingleSource from "../SingleSource/SingleSource";
 import SingleSourceBasic from "../SingleSourceBasic/SingleSourceBasic";
 

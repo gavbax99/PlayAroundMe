@@ -1,6 +1,8 @@
+// React and CSS
 import React, { Component } from "react";
 import "./DropdownMenu.css";
 
+// Redux
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import * as actionCreators from "../../actions/actions";
@@ -11,10 +13,12 @@ class DropdownMenu extends Component {
 		hiddenMenu: false,
 	}
 
+	// Toggles set menu open/closed
 	toggleMenu = () => {
 		this.setState({ hiddenMenu: !this.state.hiddenMenu });
 	}
 
+	// Updates the set
 	changeSet = (e) => {
 		console.log(e.target.getAttribute("set"));
 		this.toggleMenu();
@@ -43,6 +47,7 @@ class DropdownMenu extends Component {
 
 				<div className={fullCloseHiddenMenu} onClick={this.toggleMenu}></div>
 
+				{/* SET LIST */}
 				<div className={hiddenMenuClasses}>
 
 					{/* Jumpstart */}
@@ -64,6 +69,7 @@ class DropdownMenu extends Component {
 
 };
 
+// Redux
 const mapStateToProps = state => ({storeData: state.setData});
 const mapDispatchToProps = dispatch => (bindActionCreators(actionCreators, dispatch));
 export default connect(mapStateToProps, mapDispatchToProps)(DropdownMenu);

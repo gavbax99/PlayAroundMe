@@ -1,12 +1,15 @@
+// React
 import React, { Component } from "react";
 import "./Modal.css";
 
+// Redux
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import * as actionCreators from "../../actions/actions";
 
 class Modal extends Component {
 
+	// Closes modal
 	closeModal = () => {
 		let newO = {
 			show: false,
@@ -48,6 +51,7 @@ class Modal extends Component {
 
 };
 
+// Redux
 const mapStateToProps = state => ({
 	storeModalButton: state.modalButton
 });

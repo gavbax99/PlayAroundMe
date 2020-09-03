@@ -75,14 +75,8 @@ class SetCreator extends Component {
 	// Uses top two input to apply set info
 	setInfo = (input) => {
 		const setName = document.getElementById("setName");
-		if (setName.value != null) {
-			this.setState({ outputText: this.state.outputText += `${setName.value}", code: "` });
-		}
-
 		const setCode = document.getElementById("setCode");
-		if (setCode.value != null) {
-			this.setState({ outputText: this.state.outputText += `${setCode.value}"}, cards: [` });
-		}
+		this.setState({ outputText: `${this.state.outputText}${setName.value}", code: "${setCode.value}"}, cards: [` });
 
 		this.prepCardList(input, false);
 	}
@@ -101,10 +95,8 @@ class SetCreator extends Component {
 		this.setState({ scrubbedCardList: scrubbedList });
 		console.log(isNBL)
 		if (isNBL) {
-			console.log("this state NBL: " + this.state.scrubbedCardList )
 			this.startNBLAPILoop();
 		} else {
-			console.log("this state NOT NBL: " + this.state.scrubbedCardList )
 			this.startAPILoop();
 		}
 	}
@@ -129,11 +121,11 @@ class SetCreator extends Component {
 					// Color 
 					let color = 1;
 					// w=1, u=2, b=3, r=4, g=5, c=6, m=7
-					if (data.colors.length == 0) {
+					if (data.colors.length === 0) {
 						color = 6;
 					} else if (data.colors.length > 1) {
 						color = 7;
-					} else if (data.colors.length == 1) {
+					} else if (data.colors.length === 1) {
 						switch (data.colors[0]) {
 							case "W":
 								color = 1;
@@ -159,7 +151,7 @@ class SetCreator extends Component {
 					const imageUrl = data.image_uris.large.match(/(?<=front\/).+/g)[0].replace(/\.jpg?.*/g, "");
 
 					// Cost
-					const costArr = data.mana_cost.replace(/[\{\}]/g, "").split("").reverse();
+					const costArr = data.mana_cost.replace(/[{}]/g, "").split("").reverse();
 					let costStr = "[";
 					costArr.forEach(val => {
 						if (val === "W" || val === "U" || val === "B" || val === "R" || val === "G") {
@@ -178,7 +170,7 @@ class SetCreator extends Component {
 					const cardObject = `{ name: "${name}", cost: [${costStr}], imageUrl: "${imageUrl}", cmc: ${cmc}, color: ${color}, sev: XX, pump: 0, counterspell: 0, removal: 0 },`;
 
 					// Output text
-					this.setState({ outputText: this.state.outputText += cardObject });
+					this.setState({ outputText: `${this.state.outputText}${cardObject}` });
 				});
 
 				// Remove the card from the state
@@ -223,14 +215,14 @@ class SetCreator extends Component {
 					const nblObject = `{ name: "${name}", mana: "${mana}", perms: ${perms}, imageUrl: "${imageUrl}" },`;
 
 					// Output text
-					this.setState({ outputText: this.state.outputText += nblObject });
+					this.setState({ outputText: `${this.state.outputText}${nblObject}` });
 				});
 
 				// Remove the card from the state
 				this.setState({ scrubbedCardList: [...this.state.scrubbedCardList.slice(1, this.state.scrubbedCardList.length)]})
 			} else {
 				// Out of cards? Clear loop
-				this.setState({ outputText: this.state.outputText += "]," });
+				this.setState({ outputText: `${this.state.outputText}],` });
 				clearInterval(nblAPILoop);
 				this.printToOutput();
 			}
@@ -247,7 +239,7 @@ class SetCreator extends Component {
 
 		// Basic lands basic text
 		const basicLandStart = `	],	sources: {	Basic$Lands: [`;
-		this.setState({ outputText: this.state.outputText += basicLandStart });
+		this.setState({ outputText: `${this.state.outputText}${basicLandStart}` });
 
 		// Interval
 		const basicLandApiLoop = setInterval(() => {
@@ -292,13 +284,13 @@ class SetCreator extends Component {
 					const cardObject = `{ name: "${name}", mana: "${letterLower}", perms: 1, imageUrl: "${imageUrl}", iconColor: "#${hexColor}", manaSymbol: "./assets/${letterUpper}.svg" },`;
 
 					// Output text
-					this.setState({ outputText: this.state.outputText += cardObject });
+					this.setState({ outputText: `${this.state.outputText}${cardObject}` });
 				})
 
 				// Remove the card from the state
-				this.setState({ basics: [...this.state.basics.slice(1, this.state.basics.length)]})
+				this.setState({ basics: [...this.state.basics.slice(1, this.state.basics.length)] })
 			} else {
-				this.setState({ outputText: this.state.outputText += "]," });
+				this.setState({ outputText: `${this.state.outputText}],` });
 				clearInterval(basicLandApiLoop);
 				this.printToOutput();
 			}

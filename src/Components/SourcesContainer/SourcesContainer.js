@@ -1,12 +1,15 @@
+// React and CSS
 import React, { Component } from "react";
 import "./SourcesContainer.css";
 
+// Redux
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import * as actionCreators from "../../actions/actions";
 
 class SourcesContainer extends Component {
 
+	// clicking a source removes it
 	removeSource = (e) => {
 		const iToRemove = parseInt(e.target.getAttribute("i"));
 		let newSourceArray = [...this.props.storeData];
@@ -15,7 +18,7 @@ class SourcesContainer extends Component {
 	}
 
 	render = () => {
-		const scryfall = "https://img.scryfall.com/cards/large/front/";
+		const scryfall = "https://img.scryfall.com/cards/small/front/";
 		const renderSources = this.props.storeData.map((sourceObj, i) => {
 			return (
 				<li className="source-list-item" key={`${sourceObj.image}${i}`} onClick={this.removeSource}>
@@ -35,6 +38,7 @@ class SourcesContainer extends Component {
 
 };
 
+// Redux
 const mapStateToProps = state => ({storeData: state.sourceArr});
 const mapDispatchToProps = dispatch => (bindActionCreators(actionCreators, dispatch));
 export default connect(mapStateToProps, mapDispatchToProps)(SourcesContainer);

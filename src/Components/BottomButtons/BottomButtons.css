@@ -16,7 +16,7 @@
     color: #fff;
     background-color: #4587ff;
     border-radius: 3px;
-    transition: 0.3s;
+	transition: 0.2s ease;
     transition-timing-function: cubic-bezier(.61,.06,.38,.91);
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .2);
 }

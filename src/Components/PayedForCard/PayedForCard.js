@@ -1,3 +1,4 @@
+// React and CSS
 import React, { Component } from "react";
 import "./PayedForCard.css";
 

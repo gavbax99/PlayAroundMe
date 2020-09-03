@@ -1,6 +1,8 @@
+// React and CSS
 import React, { Component } from "react";
 import "./BottomButtons.css";
 
+// Redux
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import * as actionCreators from "../../actions/actions";
@@ -117,6 +119,7 @@ class BottomButtons extends Component {
 			return cardObj.pump === 1;
 		});
 
+		// update which filter buttons will be shown
 		this.props.updateCSButton(sortByCSButton);
 		this.props.updateRemovalButton(sortByRemovalButton);
 		this.props.updatePumpButton(sortByPumpButton);
@@ -139,9 +142,10 @@ class BottomButtons extends Component {
 			</div>
 		);
 	};
-
+	
 };
 
+// Redux
 const mapStateToProps = state => ({
 	storeSourceArr: state.sourceArr,
 	storeSetData: state.setData

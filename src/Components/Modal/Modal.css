@@ -37,11 +37,12 @@
 .modal-top {
 	width: 100%;
 	padding: 25px;
+	font-weight: 700;
 	background-color: rgb(226, 226, 226);
 	border-bottom: rgb(205, 215, 221);
 	font-size: 20px;
 	color: #252525;
-	border-radius: 10px 10px 0 0;
+	border-radius: 6px 6px 0 0;
 	box-shadow: 0 0 5px rgba(0,0,0,0.15);
 }
 
@@ -53,7 +54,7 @@
 	font-size: 14px;
 	color: #252525;
 	background-color: rgb(241, 241, 241);
-	border-radius: 0 0 10px 10px;
+	border-radius: 0 0 6px 6px;
 	box-shadow: 0 0 5px rgba(0,0,0,0.15);
 }
 
@@ -66,7 +67,7 @@
     background-color: #4587ff;
     border: none;
     outline: none;
-    padding: 2px 7px;
+    padding: 2px 4px;
     border-radius: 2px;
 	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .15);
 }
@@ -77,7 +78,7 @@
 }
 
 .how-to-list {
-	margin-top: 20px;
+	
 }
 
 .how-to-list li {
@@ -95,16 +96,42 @@
 }
 
 .icon-row {
+	position: relative;
 	margin-top: 20px;
 }
 
 .tech-icons {
-	margin: 0 5px;
+	margin: 0 10px;
+}
+
+.mtop {
+	margin-top: 4px;
+}
+
+.mtop20 {
+	margin-top: 20px;
+}
+
+.icon-subtext {
+	font-size: 10px;
+	color: #888888;
+	margin-top: 4px;
 }
 
 .about-container {
 	width: 100%;
 	text-align: center;
+}
+
+.tech-button,
+.tech-button:active,
+.tech-button:focus {
+	transition: 0.2s ease;
+    cursor: pointer !important;
+}
+
+.tech-button:hover {
+	transform: translate(0, -2px);
 }
 
 
@@ -123,5 +150,5 @@
 }
 
 .modal-display .modal-anim {
-	background-color: rgba(0,0,0,0.5);
+	background-color: rgba(0,0,0,0.7);
 }

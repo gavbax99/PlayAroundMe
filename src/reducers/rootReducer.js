@@ -1,9 +1,7 @@
 // import sets
 import M21 from "../Sets/M21";
-import JMP from "../Sets/JMP";
 
 const setM21 = M21;
-const setJMP = JMP;
 
 const initState = {
 	setData: setM21,
