@@ -6,7 +6,6 @@ export default {
 	cards: [
 		// color: w=1, u=2, b=3, r=4, g=5, c=6, m=7
 		// instants
-		{ name: "Thundermaw Hellkite", cost: [["r", "r", "1", "1", "1", ]], imageUrl: "a/7/a75f6bb4-ab06-42ca-a0df-326d9a098a26", cmc: 5, color: 4, sev: 99, pump: 0, counterspell: 0, removal: 0 },
 		{ name: "Alchemist's Gift", cost: [["b"]], imageUrl: "6/e/6e4c9574-1ee3-461e-848f-8f02c6a8b7ee", cmc: 1, color: 3, sev: 45, pump: 1, counterspell: 0, removal: 0 },
 		{ name: "Angelic Ascension", cost: [["w", "1"]], imageUrl: "e/8/e8cca776-b0e4-4cd2-815f-36c1f86cf497", cmc: 2, color: 1, sev: 70, pump: 0, counterspell: 0, removal: 1 },
 		{ name: "Burn Bright", cost: [["r", "1", "1"]], imageUrl: "f/1/f19b4a80-41e1-4c5f-869a-682f08543f12", cmc: 3, color: 4, sev: 45, pump: 1, counterspell: 0, removal: 0 },
