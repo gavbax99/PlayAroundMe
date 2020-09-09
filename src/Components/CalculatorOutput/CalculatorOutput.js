@@ -74,34 +74,6 @@ class CalculatorOutput extends Component {
 		}
 	}
 
-	// mobile sort
-	// mobileSort = (e) => {
-	// 	const sort = e.target.getAttribute("sort");
-	// 	switch (sort) {
-	// 		case "CMC":
-	// 			this.sortbyCMC();
-	// 			break;
-	// 		case "Severity":
-	// 			this.sortbySeverity();
-	// 			break;
-	// 		case "Color":
-	// 			this.sortbyColor();
-	// 			break;
-	// 		case "Counterspell":
-	// 			this.sortbyCounterspell();
-	// 			break;
-	// 		case "Removal":
-	// 			this.sortbyRemoval();
-	// 			break;
-	// 		case "Pump":
-	// 			this.sortbyPump();
-	// 			break;
-	// 		default: break;
-	// 	}
-	// 	this.props.updateSortText(sort);
-		
-	// }
-
 	sort = (e) => {
 		let newArr = [...this.props.storePayedFor];
 
@@ -135,45 +107,6 @@ class CalculatorOutput extends Component {
 		this.props.updateSortText(sort);
 		this.props.updatePayedForArray(newArr);
 	}
-
-	// sortbyCMC = () => {
-	// 	let newArr = [...this.props.storePayedFor];
-	// 	newArr.sort((a, b) => b.cmc - a.cmc);
-	// 	this.props.updateSortText("CMC");
-	// 	this.props.updatePayedForArray(newArr);
-	// }
-
-	// sortbySeverity = () => {
-	// 	let newArr = [...this.props.storePayedFor];
-	// 	newArr.sort((a, b) => a.sev - b.sev);
-	// 	this.props.updateSortText("CMC");
-	// 	this.props.updatePayedForArray(newArr);
-	// }
-
-	// sortbyColor = () => {
-	// 	let newArr = [...this.props.storePayedFor];
-	// 	newArr.sort((a, b) => a.color - b.color);
-	// 	this.props.updateSortText("CMC");
-	// 	this.props.updatePayedForArray(newArr);
-	// }
-
-	// sortbyCounterspell = () => {
-	// 	let newArr = [...this.props.storePayedFor];
-	// 	newArr.sort((a, b) => b.counterspell - a.counterspell);
-	// 	this.props.updatePayedForArray(newArr);
-	// }
-
-	// sortbyRemoval = () => {
-	// 	let newArr = [...this.props.storePayedFor];
-	// 	newArr.sort((a, b) => b.removal - a.removal);
-	// 	this.props.updatePayedForArray(newArr);
-	// }
-
-	// sortbyPump = () => {
-	// 	let newArr = [...this.props.storePayedFor];
-	// 	newArr.sort((a, b) => b.pump - a.pump);
-	// 	this.props.updatePayedForArray(newArr);
-	// }
 
 	render = () => {
 		// update css classes

@@ -28,8 +28,10 @@ class DropdownMenu extends Component {
 	}
 
 	render = () => {
+		// code for set icon
 		const iconPath = `./assets/setIcons/${this.props.storeData.setInfo.code}black.svg`;
 
+		// css states of menu
 		let hiddenMenuClasses = "set-list set-visibility";
 		let fullCloseHiddenMenu = "hidden";
 		

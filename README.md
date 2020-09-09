@@ -1,16 +1,5 @@
 todo:
-<!-- - favicon -->
-<!-- - modal
-  - about
-  - how to
-  - too many permutations
-  - too many lands -->
-- scale for tablet/mobile
-<!-- - add more sets -->
-<!-- - documentation for how to add new sets -->
-<!-- - final touch ups -->
-
-
+readme
 
 *Note: use eval() safely, users can't parse code
 
@@ -27,10 +16,3 @@ adding a new set:
   - import the set
 - in .Componenets/DropdownMenu.js:
   - add the new set in the dropdown menu
-
-css breaks:
-1600+
-970-1600
-
-
-			  
