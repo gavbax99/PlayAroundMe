@@ -7,3 +7,26 @@
 .payed-for-card {
 	width: 100%;
 }
+
+/* MEDIA Q */
+@media only screen and (max-width: 1600px) {
+	.payed-for-card-container {
+		width: 200px;
+	}
+}
+
+@media only screen and (max-width: 970px) {
+
+}
+
+@media only screen and (max-width: 550px) {
+	.payed-for-card-container {
+		width: 141px;
+	}
+}
+
+@media only screen and (max-width: 359px) {
+	.payed-for-card-container {
+		width: 100%;
+	}
+}

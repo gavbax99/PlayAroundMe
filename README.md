@@ -6,9 +6,9 @@ todo:
   - too many permutations
   - too many lands -->
 - scale for tablet/mobile
-- add more sets
+<!-- - add more sets -->
 <!-- - documentation for how to add new sets -->
-- final touch ups
+<!-- - final touch ups -->
 
 
 
@@ -16,16 +16,21 @@ todo:
 
 adding a new set:
 - in ./Sets:
-  - add set.js with relevant cards and mana sources p(now automated)
+  - add set.js with relevant cards and mana sources (now automated)
   - scryfall for images (now automated)
-  			- add setbg.jpg from the ai in the root folder (background)
+  - add setbg.jpg from the ai in the root folder (background)
 - in ./public/assets/setIcons:
-  			- add SETblack.svg from the ai in the root folder (set icon)
+  - add SETblack.svg from the ai in the root folder (set icon)
 - in ./Components/CalculatorOutput.css:
-  			- add set icon class at the bottom
+  - add set icon class at the bottom
 - in ./reducers/rootReducer:
-  			- import the set
+  - import the set
 - in .Componenets/DropdownMenu.js:
-  			- add the new set in the dropdown menu
+  - add the new set in the dropdown menu
+
+css breaks:
+1600+
+970-1600
+
 
 			  

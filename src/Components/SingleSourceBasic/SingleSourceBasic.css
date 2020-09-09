@@ -3,3 +3,22 @@
 .regbasics-button:active {
 	height: 60px;
 }
+
+/* MEDIA Q */
+@media only screen and (max-width: 1600px) {
+
+}
+
+@media only screen and (max-width: 970px) {
+
+}
+
+@media only screen and (max-width: 550px) {
+	.regbasics-button, 
+	.regbasics-button:focus, 
+	.regbasics-button:active {
+		width: calc(20% - 10px) !important;
+		height: 55px !important;
+		background-size: 200%;
+	}
+}

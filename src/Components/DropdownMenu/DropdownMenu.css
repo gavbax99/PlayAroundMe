@@ -9,6 +9,7 @@
 	border-radius: 3px;
 	margin-left: 10px;
 	cursor: pointer;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05)
 }
 
 .set-icon {
@@ -17,15 +18,26 @@
 }
 
 .set-name {
-	color: #252525;
-	margin-right: 20px;
-	font-size: 14px;
-	font-weight: 700;
-	white-space: nowrap;
+    width: 100%;
+    min-width: 100px;
+    max-width: 100px;
+    color: #252525;
+    margin-right: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-top: 1px;
 }
 
 .set-name-list {
 	margin-right: 0;
+	text-overflow: initial;
+	text-align: right;
+	width: 100%;
+    min-width: 0;
+    max-width: 100%;
 }
 
 .set-list {
@@ -79,4 +91,32 @@
 
 .hidden {
 	display: none;
+}
+
+.dropdown-header {
+	display: flex;
+}
+
+.dropdown-sources {
+	display: none;
+}
+
+
+/* MEDIA Q */
+@media only screen and (max-width: 1600px) {
+
+}
+
+@media only screen and (max-width: 970px) {
+
+}
+
+@media only screen and (max-width: 550px) {
+	.dropdown-header {
+		display: none;
+	}
+	
+	.dropdown-sources {
+		display: flex;
+	}
 }

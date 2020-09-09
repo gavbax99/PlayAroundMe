@@ -17,6 +17,7 @@ const initState = {
 		name: "Name",
 		desc: "Desc"
 	},
+	sortText: "Severity",
 };
 
 const rootReducer = (state = initState, action) => {
@@ -63,6 +64,12 @@ const rootReducer = (state = initState, action) => {
 		case "UPDATE_MODAL":
 			return Object.assign({}, state, {
 				modalButton: action.modalButton,
+			});
+
+		// update the modal
+		case "UPDATE_SORT_TEXT":
+			return Object.assign({}, state, {
+				sortText: action.sortText,
 			});
 
 		// first return the initState

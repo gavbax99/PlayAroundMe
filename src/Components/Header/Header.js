@@ -70,11 +70,11 @@ class Header extends Component {
     render() {
         return (
 			<header className="header-container">
-                <img src="./assets/logo.svg" width="40" alt="PlayAroundMe logo" />
+                <img className="header-logo" src="./assets/logo.svg" alt="PlayAroundMe logo" />
 				<div className="flex-full flex-row">
 					<button className="header-link" onClick={this.showHowTo}>How-To</button>
 					<button className="header-link" onClick={this.showAbout}>About</button>
-					<DropdownMenu />
+					<DropdownMenu isHeader={true} />
 				</div>
             </header>
         );

@@ -29,17 +29,24 @@ class DropdownMenu extends Component {
 
 	render = () => {
 		const iconPath = `./assets/setIcons/${this.props.storeData.setInfo.code}black.svg`;
-		console.log(iconPath);
 
 		let hiddenMenuClasses = "set-list set-visibility";
 		let fullCloseHiddenMenu = "hidden";
+		
 		if (this.state.hiddenMenu) {
 			hiddenMenuClasses = "set-list"
 			fullCloseHiddenMenu = "full-close"
 		}
 
+		let dropdownHeaderCheck = "dropdown-container";
+		if (this.props.isHeader) {
+			dropdownHeaderCheck = "dropdown-container dropdown-header"
+		} else {
+			dropdownHeaderCheck = "dropdown-container dropdown-sources"
+		}
+
 		return (
-			<div className="dropdown-container">
+			<div className={dropdownHeaderCheck}>
 				<div className="flex-full flex-row dropdown-menu" onClick={this.toggleMenu}>
 					<img className="set-icon" src={iconPath} alt="Current set icon"/>
 					<p className="set-name">{this.props.storeData.setInfo.name}</p>
@@ -49,7 +56,7 @@ class DropdownMenu extends Component {
 				<div className={fullCloseHiddenMenu} onClick={this.toggleMenu}></div>
 
 				{/* SET LIST */}
-				<div className={hiddenMenuClasses}>
+				<div className={hiddenMenuClasses}>	
 
 					{/* 2XM */}
 					<button className="flex-full flex-row set-button" set="setTXM" onClick={this.changeSet}>

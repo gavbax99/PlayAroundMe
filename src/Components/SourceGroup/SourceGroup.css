@@ -13,3 +13,18 @@
     flex-wrap: wrap;
     justify-content: flex-start;
 }
+
+/* MEDIA Q */
+@media only screen and (max-width: 1600px) {
+	.tagline {
+		margin-top: 10px;
+	}
+}
+
+@media only screen and (max-width: 970px) {
+
+}
+
+@media only screen and (max-width: 550px) {
+
+}

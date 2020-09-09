@@ -22,14 +22,14 @@ class SourcesContainer extends Component {
 		const renderSources = this.props.storeData.map((sourceObj, i) => {
 			return (
 				<li className="source-list-item" key={`${sourceObj.image}${i}`} onClick={this.removeSource}>
-					<img src={`${scryfall}${sourceObj.image}.jpg`} height="95" alt="land" i={i} />
+					<img className="source-list-image" src={`${scryfall}${sourceObj.image}.jpg`} alt="land" i={i} />
 				</li>
 			);
 		});
 
 		return (
 			<div className="flex-full flex-row sources-container">
-				<ul className="flex-full flex-row">
+				<ul className="flex-full flex-row sources-list">
 					{renderSources}
 				</ul>
 			</div>

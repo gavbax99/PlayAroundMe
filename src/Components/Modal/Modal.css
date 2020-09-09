@@ -9,6 +9,7 @@
 	left: 0;
 	right: 0;
 	visibility: hidden;
+	padding: 10px;
 }
 
 .modal-display {
@@ -35,9 +36,10 @@
 }
 
 .modal-top {
+	justify-content: space-between;
 	width: 100%;
 	padding: 25px;
-	font-weight: 700;
+	font-weight: 500;
 	background-color: rgb(226, 226, 226);
 	border-bottom: rgb(205, 215, 221);
 	font-size: 20px;
@@ -48,7 +50,6 @@
 
 .modal-bottom {
 	width: 100%;
-	/* align-items: flex-start; */
 	align-items: center;
 	padding: 25px;
 	font-size: 14px;
@@ -75,10 +76,6 @@
 .modal-p {
 	font-size: 14px;
 	line-height: 1.5;
-}
-
-.how-to-list {
-	
 }
 
 .how-to-list li {
@@ -134,16 +131,6 @@
 	transform: translate(0, -2px);
 }
 
-
-
-
-
-
-
-
-
-
-
 .modal-display .modal {
 	margin-top: 0;
 	opacity: 1;
@@ -151,4 +138,50 @@
 
 .modal-display .modal-anim {
 	background-color: rgba(0,0,0,0.7);
+}
+
+.modal-top-x-container,
+.modal-top-x-container:active,
+.modal-top-x-container:focus {
+	position: relative;
+    padding: 0 !important;
+    background: none !important;
+    border: none !important;
+    outline: none !important;
+    cursor: pointer !important;
+    transition: 0.2s ease;
+}
+
+.modal-fill {
+	width: 30px;
+}
+
+.modal-top-x-container:hover {
+	transform: translateY(-2px);
+}
+
+.modal-x {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+
+/* MEDIA Q */
+@media only screen and (max-width: 1600px) {
+
+}
+
+@media only screen and (max-width: 970px) {
+
+}
+
+@media only screen and (max-width: 550px) {
+	.modal-bottom,
+	.modal-top {
+		padding: 20px;
+	}
 }

@@ -18,5 +18,56 @@
 }
 
 .fw-bold {
-	font-weight: 700;
+	font-weight: 500;
+}
+
+.calculator-buttons-bottom-space {
+	width: 100%;
+	height: 20px;
+}
+
+.calculator-buttons-change-set {
+	display: none;
+}
+
+.calculator-buttons-set-logo {
+	display: block;
+}
+
+/* MEDIA Q */
+@media only screen and (max-width: 1600px) {
+	.lands {
+		max-width: 500px;
+		min-width: 500px;
+	}
+}
+
+@media only screen and (max-width: 970px) {
+	.lands {
+		max-width: 100%;
+		min-width: 100%;
+	}
+}
+
+@media only screen and (max-width: 550px) {
+	.calculator-buttons-change-set {
+		display: block;
+	}
+
+	.calculator-buttons-set-logo {
+		display: none;
+	}
+
+	.lands {
+		padding: 10px 5px 10px;
+	}
+
+	.title-container {
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+
+	.calculator-buttons-bottom-space {
+		height: 10px;
+	}
 }

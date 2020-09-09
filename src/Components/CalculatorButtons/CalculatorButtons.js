@@ -6,6 +6,7 @@ import "./CalculatorButtons.css";
 import SourcesContainer from "../SourcesContainer/SourcesContainer";
 import SourceGroup from "../SourceGroup/SourceGroup";
 import BottomButtons from "../BottomButtons/BottomButtons";
+import DropdownMenu from "../DropdownMenu/DropdownMenu";
 
 // Redux
 import { bindActionCreators } from "redux";
@@ -31,7 +32,9 @@ class CalculatorButtons extends Component {
 
 				<div className="flex-full flex-row title-container">
 					<h1 className="fw-bold">Mana Sources</h1>
-					<img src={`./assets/setIcons/${this.props.storeData.setInfo.code}black.svg`} height="20" alt="Current set icon" />
+					<img className="calculator-buttons-set-logo" src={`./assets/setIcons/${this.props.storeData.setInfo.code}black.svg`} height="20" alt="Current set icon" />
+
+					<DropdownMenu isHeader={false} />
 				</div>
 
 				<div id="land-output" className="land-output">
@@ -39,6 +42,7 @@ class CalculatorButtons extends Component {
 				</div>
 
 				<BottomButtons />
+				<div className="calculator-buttons-bottom-space"></div>
 			</div>
 		);
 	};

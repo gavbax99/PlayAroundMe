@@ -124,8 +124,8 @@ class BottomButtons extends Component {
 		this.props.updateRemovalButton(sortByRemovalButton);
 		this.props.updatePumpButton(sortByPumpButton);
 
-		// this.props.updateGetStartedText(false);
-		this.props.updatePayedForArray(payedFor);
+		this.props.updateSortText("Severity");
+		this.props.updatePayedForArray(payedFor.sort((a, b) => a.sev - b.sev));
 	}
 
 	// clear button

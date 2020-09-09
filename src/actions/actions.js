@@ -40,3 +40,9 @@ export const updateModal = modalButton => ({
 	modalButton
 });
 
+// updating the sort mode text
+export const updateSortText = sortText => ({
+	type: "UPDATE_SORT_TEXT",
+	sortText
+});
+

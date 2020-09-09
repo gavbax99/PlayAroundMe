@@ -13,12 +13,12 @@
     border-radius: 3px;
     border: none;
     text-align: center;
-	font-weight: 700;
+	font-weight: 500;
 	box-shadow: 0 2px 5px 0 rgba(0, 0, 0,.10);
 	outline: none;
 
     font-size: 12px;
-    line-height: 1.2;
+    line-height: 1.1;
     height: 50px; 
     color: #fff;
     text-shadow: 1px 1px 1px #000, 1px 1px 3px #535353, -1px -1px 1px #353535;
@@ -29,8 +29,32 @@
 	
 	transition: 0.2s ease;
 	cursor: pointer !important;
+
+	word-wrap: break-word;
 }
 
 .land-button:hover {
 	transform: translate(0, -2px);
+}
+
+/* MEDIA Q */
+@media only screen and (max-width: 1600px) {
+
+}
+
+@media only screen and (max-width: 970px) {
+
+}
+
+@media only screen and (max-width: 550px) {
+	.land-button,
+	.land-button:focus,
+	.land-button:active {
+		width: calc(25% - 10px);
+		height: 45px;
+	}
+
+	.basic-icon {
+		width: 22px;
+	}
 }

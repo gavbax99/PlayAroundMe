@@ -3,7 +3,6 @@
 	position: relative;
 	justify-content: space-between;
 	align-items: center;
-    font-family: sans-serif;
     text-align: center;
     width: 100%;
     padding: 15px 20px;
@@ -28,6 +27,42 @@
 	transition: 0.3s;
 }
 
+.header-logo {
+	width: 40px;
+}
+
 .header-link:hover {
 	background-color: #575757;
+}
+
+
+/* MEDIA Q */
+@media only screen and (max-width: 1600px) {
+
+}
+
+@media only screen and (max-width: 970px) {
+
+}
+
+@media only screen and (max-width: 550px) {
+	.header-container {
+		padding: 10px;
+		background-color: #252525;
+		color: #fff;
+		font-size: 20px;
+	}
+
+	.header-link,
+	.header-link:focus,
+	.header-link:active {
+		background-color: #575757 !important;
+		margin-right: 1px;
+		margin-left: 9px;
+		padding: 9px 15px;
+	}
+
+	.header-logo {
+		width: 30px;
+	}
 }

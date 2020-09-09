@@ -38,8 +38,18 @@ class Modal extends Component {
 				</div>
 
 				<div className="flex-full flex-col modal">
-					<div className="flex-full modal-top">
-						{this.props.storeModalButton.name}
+					<div className="flex-full flex-row modal-top">
+						<div className="modal-fill"></div>
+
+						{/* Modal name */}
+						<p>
+							{this.props.storeModalButton.name}
+						</p>
+
+						{/* Close button */}
+						<button className="modal-top-x-container" onClick={this.closeModal}>
+							<img src="./assets/x.svg" className="modal-x" alt="Close the modal icon."/>
+						</button>
 					</div>
 					<div className={dynamicModalBottom}>
 						<div dangerouslySetInnerHTML={{__html: dhtml}} />
