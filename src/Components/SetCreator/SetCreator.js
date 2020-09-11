@@ -148,7 +148,9 @@ class SetCreator extends Component {
 					}
 
 					// Image uri
-					const imageUrl = data.image_uris.large.match(/(?<=front\/).+/g)[0].replace(/\.jpg?.*/g, "");
+					const imageUrl = data.image_uris.large.replace("https://c1.scryfall.com/file/scryfall-cards/large/front/", "").replace(/\.jpg?.*/g, "");
+					// old way to filter url
+					// console.log(data.image_uris.large.match(/(?<=front\/).+/g)[0].replace(/\.jpg?.*/g, ""));
 
 					// Cost
 					const costArr = data.mana_cost.replace(/[{}]/g, "").split("").reverse();
@@ -209,7 +211,7 @@ class SetCreator extends Component {
 
 					const name = data.name;
 					const perms = mana.length;
-					const imageUrl = data.image_uris.large.match(/(?<=front\/).+/g)[0].replace(/\.jpg?.*/g, "");
+					const imageUrl = data.image_uris.large.replace("https://c1.scryfall.com/file/scryfall-cards/large/front/", "").replace(/\.jpg?.*/g, "");
 
 					// Create obj
 					const nblObject = `{ name: "${name}", mana: "${mana}", perms: ${perms}, imageUrl: "${imageUrl}" },`;
@@ -256,7 +258,7 @@ class SetCreator extends Component {
 					const name = data.name;
 					const letterUpper = data.produced_mana[0];
 					const letterLower = letterUpper.toLowerCase();
-					const imageUrl = data.image_uris.large.match(/(?<=front\/).+/g)[0].replace(/\.jpg?.*/g, "");
+					const imageUrl = data.image_uris.large.replace("https://c1.scryfall.com/file/scryfall-cards/large/front/", "").replace(/\.jpg?.*/g, "");
 
 					// Hex color logic
 					let hexColor = "";
