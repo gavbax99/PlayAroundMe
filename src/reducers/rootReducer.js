@@ -1,9 +1,11 @@
 // import sets
 import M21 from "../Sets/M21";
 import TXM from "../Sets/TXM";
+import ZNR from "../Sets/ZNR";
 
 const setM21 = M21;
 const setTXM = TXM;
+const setZNR = ZNR;
 
 const initState = {
 	setData: setM21,

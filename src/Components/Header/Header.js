@@ -54,14 +54,14 @@ class Header extends Component {
 		const newModal = {
 			show: true,
 			name: "How-To",
-			desc: `<p class="modal-p">The PlayAroundMe calculator is used to determine what instant effects your opponent could have given their available resources so that you may better 'play around' those effects. This tool is most useful when drafting a new set with still unfamiliar cards.</p>
+			desc: `<p class="modal-p">For use in Magic: the Gathering limited formats. The PlayAroundMe calculator is used to determine what instant effects your opponent could have given their available resources so that you may better 'play around' those effects. This tool is most useful when playing a new set with still unfamiliar cards.</p>
 					<ul class="how-to-list mtop20">
 						<li>Select the set you are playing.</li>
 						<li>Input your opponent's available mana resources.</li>
 						<li>Click <span class="modal-calculate">Calculate</span> to see what they may have.</li>
 						<li>Sort results by clicking <span class="modal-calculate">CMC</span>, <span class="modal-calculate">Removal</span>, etc.</li>
 					</ul>
-					<p class="modal-p mtop20">It's too much trouble to build in unique mana effects as they're printed (for example  <a href="https://scryfall.com/card/m21/382/chromatic-orrery" target="_blank" class="name-tag">Chromatic Orrery</a>) so this will remain a simple tool. </p>`
+					<p class="modal-p mtop20">It's too much trouble to build in unique mana effects as they're printed (for example  <a href="https://scryfall.com/card/m21/382/chromatic-orrery" target="_blank" class="name-tag">Chromatic Orrery</a>) so this will remain a simple tool. Special sets not meant for regular limited play are omitted.</p>`
 		};
 
 		this.props.updateModal(newModal);

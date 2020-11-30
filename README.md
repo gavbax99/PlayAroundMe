@@ -5,7 +5,7 @@ readme
 
 adding a new set:
 - in ./Sets:
-  - add set.js with relevant cards and mana sources (now automated)
+  - add set.js with relevant cards and mana sources (now automated)*
   - scryfall for images (now automated)
   - add setbg.jpg from the ai in the root folder (background)
 - in ./public/assets/setIcons:
@@ -16,3 +16,9 @@ adding a new set:
   - import the set
 - in .Componenets/DropdownMenu.js:
   - add the new set in the dropdown menu
+
+using /setcreator:
+- reference old sets
+
+testing locally:
+- nodemon start

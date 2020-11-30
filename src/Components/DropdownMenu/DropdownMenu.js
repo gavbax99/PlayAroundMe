@@ -60,6 +60,12 @@ class DropdownMenu extends Component {
 				{/* SET LIST */}
 				<div className={hiddenMenuClasses}>	
 
+					{/* ZNR */}
+					<button className="flex-full flex-row set-button" set="setZNR" onClick={this.changeSet}>
+						<img className="set-icon" src="./assets/setIcons/ZNRblack.svg" alt="ZNR set icon" set="setZNR"/>
+						<span className="set-name set-name-list" set="setZNR">Zendikar Rising</span>
+					</button>
+
 					{/* 2XM */}
 					<button className="flex-full flex-row set-button" set="setTXM" onClick={this.changeSet}>
 						<img className="set-icon" src="./assets/setIcons/TXMblack.svg" alt="Double MAsters set icon" set="setTXM"/>
