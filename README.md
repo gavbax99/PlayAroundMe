@@ -1,6 +1,6 @@
 ## PlayAroundMe Calculator
 
-[Use the Calculator here.](playaroundme.com)
+[Use the Calculator here.](http://www.playaroundme.com)
 
 PlayAroundMe Calculator is for use in Magic: the Gathering limited formats. The PlayAroundMe calculator is used to determine what instant effects your opponent could have given their available resources so that you may better 'play around' those effects in-game. This tool is most useful when playing a new set with still unfamiliar cards.
 
