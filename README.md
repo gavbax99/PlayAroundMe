@@ -1,24 +1,32 @@
-todo:
-readme
+## PlayAroundMe Calculator
 
-*Note: use eval() safely, users can't parse code
+PlayAroundMe Calculator is for use in Magic: the Gathering limited formats. The PlayAroundMe calculator is used to determine what instant effects your opponent could have given their available resources so that you may better 'play around' those effects in-game. This tool is most useful when playing a new set with still unfamiliar cards.
 
-adding a new set:
-- in ./Sets:
-  - add set.js with relevant cards and mana sources (now automated)*
-  - scryfall for images (now automated)
-  - add setbg.jpg from the ai in the root folder (background)
-- in ./public/assets/setIcons:
-  - add SETblack.svg from the ai in the root folder (set icon)
-- in ./Components/CalculatorOutput.css:
-  - add set icon class at the bottom
-- in ./reducers/rootReducer:
-  - import the set
-- in .Componenets/DropdownMenu.js:
-  - add the new set in the dropdown menu
+#### How to Use
 
-using /setcreator:
-- reference old sets
+1. Select the set of Magic: the Gathering you're playing.
 
-testing locally:
-- nodemon start
+![Select the set](/github_assets/how-to-1.jpg)
+
+2. Input the opponent's open mana producing resources.
+
+![Input mana sources](/github_assets/how-to-2.jpg)
+
+3. Click calculate to return a list of possible instant speed cards they could potentially play.
+
+![Calculate](/github_assets/how-to-3.jpg)
+
+4. Sort the list by severity, CMC, color, or by counterspells, pump, removal.
+
+![Sort](/github_assets/how-to-4.jpg)
+
+#### About
+
+- Build with React, Redux, and JavaScript ES6.
+- Utilized [Scryfall's API](https://scryfall.com/docs/api) for building new sets.
+- Designed and developed by Gavin Baxter.
+
+#### Notes
+
+- No, this app is not legal in tournament play. It's best used playing MTGO or Arena where you can alt-tab into the app quickly. 
+- Due to the unique nature of mana effects in MTG, not all effects can be taken into account. Resource-bending cards like [Chromatic Orrery](https://scryfall.com/card/m21/382/chromatic-orrery) or [Commander's Sphere](https://scryfall.com/card/cmr/306/commanders-sphere) are released every set and it would require a lot of effort to customize each set. This is and will remain simple.
